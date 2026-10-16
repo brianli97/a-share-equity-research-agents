@@ -1,0 +1,7 @@
+interface:
+  display_name: "A股财报解读"
+  short_description: "下载A股官方披露并生成通俗、可核验的分析PDF"
+  default_prompt: "Use $a-share-filing-review to download official filings for an A-share company and generate a sourced PDF analysis."
+policy:
+  allow_implicit_invocation: true
+
