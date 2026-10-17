@@ -1,5 +1,16 @@
 __pycache__/
 *.pyc
 .tmp-test/
-output/
+tmp/
+
+# Ignore generated analysis artifacts by default.
+output/**
+
+# Keep directories traversable so selected deliverables can be tracked.
+!output/**/
+
+# Track official source PDFs, final report PDFs, and source provenance indexes.
+!output/**/source/*.pdf
+!output/**/report/*.pdf
+!output/**/extracted/source_index.csv
 
