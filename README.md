@@ -47,6 +47,9 @@ a-share-filing-review-agents/
 # Codex：为当前 Windows 用户安装
 .\scripts\install.ps1 -Agent codex -Scope user
 
+# 仓库更新后，同步覆盖已安装的 Codex Skill
+.\scripts\install.ps1 -Agent codex -Scope user -Update
+
 # Claude Code：为当前用户安装
 .\scripts\install.ps1 -Agent claude -Scope user
 
@@ -62,13 +65,14 @@ a-share-filing-review-agents/
 
 ```bash
 ./scripts/install.sh codex user
+./scripts/install.sh codex user --update
 ./scripts/install.sh claude user
 ./scripts/install.sh codex project /path/to/project
 ./scripts/install.sh claude project /path/to/project
 ./scripts/install.sh trae project /path/to/project
 ```
 
-安装脚本只复制文件，不联网、不修改已有同名目录；如果目标已存在会停止并提示先备份或删除。
+安装脚本只复制文件且不联网。默认不会修改已有同名目录；仓库更新后可显式使用 `-Update`（PowerShell）或 `--update`（Shell）同步。更新时会先暂存完整新副本，再替换目标；替换失败会恢复旧副本。安装目录是仓库的副本，不会随 Git 更新自动变化。
 
 ## 各平台如何使用
 

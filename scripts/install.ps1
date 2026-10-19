@@ -7,7 +7,9 @@ param(
     [ValidateSet("user", "project")]
     [string]$Scope = "user",
 
-    [string]$ProjectPath = (Get-Location).Path
+    [string]$ProjectPath = (Get-Location).Path,
+
+    [switch]$Update
 )
 
 $ErrorActionPreference = "Stop"
@@ -19,13 +21,43 @@ if (-not (Test-Path -LiteralPath (Join-Path $skillSource "SKILL.md"))) {
 }
 
 function Copy-Skill([string]$Target) {
-    if (Test-Path -LiteralPath $Target) {
-        throw "Target already exists: $Target`nBack it up or remove it, then retry."
-    }
     $parent = Split-Path -Parent $Target
     New-Item -ItemType Directory -Path $parent -Force | Out-Null
-    Copy-Item -LiteralPath $skillSource -Destination $Target -Recurse
-    Write-Host "Installed: $Target"
+    $staged = "$Target.stage-$PID"
+    $backup = "$Target.backup-$PID"
+
+    if ((Test-Path -LiteralPath $staged) -or (Test-Path -LiteralPath $backup)) {
+        throw "Temporary update path already exists for: $Target"
+    }
+    if ((Test-Path -LiteralPath $Target) -and -not $Update) {
+        throw "Target already exists: $Target`nRun again with -Update to replace it from the repository."
+    }
+
+    Copy-Item -LiteralPath $skillSource -Destination $staged -Recurse
+    if (-not (Test-Path -LiteralPath (Join-Path $staged "SKILL.md"))) {
+        Remove-Item -LiteralPath $staged -Recurse -Force
+        throw "Staged skill is incomplete: $staged"
+    }
+
+    if (Test-Path -LiteralPath $Target) {
+        Move-Item -LiteralPath $Target -Destination $backup
+        try {
+            Move-Item -LiteralPath $staged -Destination $Target
+            Remove-Item -LiteralPath $backup -Recurse -Force
+            Write-Host "Updated: $Target"
+        } catch {
+            if (-not (Test-Path -LiteralPath $Target) -and (Test-Path -LiteralPath $backup)) {
+                Move-Item -LiteralPath $backup -Destination $Target
+            }
+            if (Test-Path -LiteralPath $staged) {
+                Remove-Item -LiteralPath $staged -Recurse -Force
+            }
+            throw
+        }
+    } else {
+        Move-Item -LiteralPath $staged -Destination $Target
+        Write-Host "Installed: $Target"
+    }
 }
 
 switch ($Agent) {

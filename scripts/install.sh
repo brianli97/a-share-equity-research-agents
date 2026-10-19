@@ -4,23 +4,52 @@ set -euo pipefail
 agent="${1:-}"
 scope="${2:-user}"
 project_path="${3:-$PWD}"
+update="${4:-}"
+if [[ "$project_path" == "--update" ]]; then
+  project_path="$PWD"
+  update="--update"
+fi
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 skill_source="$repo_root/skills/a-share-filing-review"
 
 usage() {
-  echo "Usage: $0 <codex|claude|trae|generic> <user|project> [project-path]"
+  echo "Usage: $0 <codex|claude|trae|generic> <user|project> [project-path] [--update]"
 }
+
+[[ -z "$update" || "$update" == "--update" ]] || { usage; exit 2; }
 
 copy_skill() {
   local target="$1"
-  if [[ -e "$target" ]]; then
+  local parent staged backup
+  parent="$(dirname "$target")"
+  mkdir -p "$parent"
+
+  if [[ -e "$target" && "$update" != "--update" ]]; then
     echo "Target already exists: $target" >&2
-    echo "Back it up or remove it, then retry." >&2
+    echo "Run again with --update to replace it from the repository." >&2
     exit 2
   fi
-  mkdir -p "$(dirname "$target")"
-  cp -R "$skill_source" "$target"
-  echo "Installed: $target"
+
+  staged="$(mktemp -d "$parent/.a-share-filing-review.stage.XXXXXX")"
+  cp -R "$skill_source/." "$staged/"
+  [[ -f "$staged/SKILL.md" ]] || { rm -rf "$staged"; echo "Staged skill is incomplete" >&2; exit 1; }
+
+  if [[ -e "$target" ]]; then
+    backup="$target.backup.$$"
+    mv "$target" "$backup"
+    if mv "$staged" "$target"; then
+      rm -rf "$backup"
+      echo "Updated: $target"
+    else
+      mv "$backup" "$target"
+      rm -rf "$staged"
+      echo "Update failed; restored: $target" >&2
+      exit 1
+    fi
+  else
+    mv "$staged" "$target"
+    echo "Installed: $target"
+  fi
 }
 
 [[ -f "$skill_source/SKILL.md" ]] || { echo "Skill source not found: $skill_source" >&2; exit 1; }
