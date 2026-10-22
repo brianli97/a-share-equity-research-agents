@@ -15,6 +15,8 @@ required = [
     SKILL / "references" / "output-convention.md",
     SKILL / "references" / "report-design.md",
     SKILL / "references" / "value-investing.md",
+    SKILL / "references" / "report-data-schema.md",
+    SKILL / "scripts" / "build_report.py",
     ROOT / "adapters" / "trae" / "project_rules.md",
     ROOT / "adapters" / "trae" / "custom-agent-prompt.md",
     ROOT / "adapters" / "generic" / "AGENTS.md",

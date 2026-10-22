@@ -13,7 +13,8 @@
 - 给出适合普通投资者的阅读顺序、PDF 搜索词、财务红旗和一页结论卡。
 - 用“管理层计划→实际投入→财务变化→经营成果→下期验证”检查战略兑现度。
 - 区分公司披露、计算结果和分析判断，给专业术语作通俗注释。
-- 保存原始披露文件并生成约 10–18 页的中文 PDF。
+- 保存原始披露文件并生成约 14–22 页的中文 PDF。
+- 使用一套通用渲染器；每家公司只新增 `report_data.json`，不新增公司专用 Python 脚本。
 
 ## 仓库结构
 
@@ -22,10 +23,12 @@ a-share-filing-review-agents/
 ├─ skills/a-share-filing-review/       # 唯一事实源，符合 Agent Skills 结构
 │  ├─ SKILL.md
 │  ├─ agents/openai.yaml               # Codex 展示与自动触发配置
+│  ├─ scripts/build_report.py           # JSON 驱动的统一 PDF 渲染器
 │  └─ references/
 │     ├─ analysis-framework.md
 │     ├─ reader-guide.md
 │     ├─ output-convention.md
+│     ├─ report-data-schema.md
 │     └─ source-policy.md
 ├─ adapters/
 │  ├─ trae/project_rules.md             # 在 TRAE 的项目规则中使用
@@ -176,6 +179,8 @@ TRAE 官方规则优先级为：用户输入 > 自定义 Agent 提示词 > `user
    ├─ extracted/    # 可复核的提取数据或中间表
    └─ report/       # 最终 PDF
 ```
+
+其中 `extracted/report_data.json` 保存公司特有内容，统一由 Skill 内的 `scripts/build_report.py` 渲染。不要为每家公司复制一份构建脚本。
 
 最终回复应给出全部成品的可点击路径，并说明报告期、资料缺失和未审计数据。
 

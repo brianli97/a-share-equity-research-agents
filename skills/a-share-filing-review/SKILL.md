@@ -25,6 +25,7 @@ description: Download official prospectuses and recent periodic reports for an A
 4. 读取 [references/output-convention.md](references/output-convention.md)，确定目录和交付方式。
 5. 读取 [references/report-design.md](references/report-design.md)，使用统一视觉系统并执行防重叠检查。
 6. 读取 [references/value-investing.md](references/value-investing.md)，形成有证据、可证伪的价值投资判断。
+7. 需要生成 PDF 时读取 [references/report-data-schema.md](references/report-data-schema.md)，使用统一数据格式和通用渲染器。
 
 ## 工作流
 
@@ -36,7 +37,7 @@ description: Download official prospectuses and recent periodic reports for an A
 6. 按分析框架完成业务、行业、收入、利润、现金流、资产质量、治理、募投和风险分析。报告必须列示上市板块、官方行业分类、主要市场概念及其业务暴露占比。优先使用分行业或分产品/服务披露值；无法直接映射概念时，可基于官方业务资料作区间估算，但必须展示依据、算法、重叠关系、可信度和限制，不把估算写成公司披露。用管理层表述、实际投入、财务变化和经营成果交叉验证发展战略。
 7. 在事实分析之上形成价值投资章节：解释公司靠什么长期创造价值、护城河证据、资本配置记录、正常化盈利、主要下行风险、估值适用方法及投资逻辑失效条件。明确区分“公司披露”“计算结果”“分析判断”和“估算结果”；观点必须能被后续指标验证或推翻。
 8. 先写结论再写证据；专业术语首次出现时给一句通俗解释；图表注明单位、期间和来源。报告加入“读者如何自己复核”和“战略兑现跟踪表”，但不堆砌教科书内容。
-9. 使用平台已有的 PDF 或文档工具生成报告。遵循报告设计规范，逐页渲染检查信息层级、留白、裁切、重叠和表格拆页；任一页面不合格就修正并重新渲染。若平台不能生成 PDF，先交付完整 Markdown 或 HTML，并明确说明限制。
+9. 将本公司的报告内容保存为 `extracted/report_data.json`，优先用本 Skill 的 `scripts/build_report.py` 生成 PDF。不得为单家公司创建 `build_<公司>_report.py` 或其他一次性渲染脚本；公司差异属于数据，不属于渲染代码。遵循报告设计规范，逐页渲染检查信息层级、留白、裁切、重叠和表格拆页；任一页面不合格就修改数据或通用渲染器并重新生成。若通用渲染器或依赖不可用，再使用平台已有的 PDF/文档工具；平台不能生成 PDF 时先交付完整 Markdown 或 HTML，并明确说明限制。
 10. 同时保存原始披露和最终报告；最终回复列明报告期、来源限制和成品路径。
 
 ## 证据纪律

@@ -11,7 +11,7 @@ output/a-share-filing-review/
 ```
 
 - `source/`：官方招股书、年报、半年报或季报；第三方历史镜像必须在文件名中标注。
-- `extracted/`：结构化数据、文本提取和计算表。只保留有助于复核的材料。
+- `extracted/`：结构化数据、文本提取和计算表。每家公司保存一份 `report_data.json` 供通用渲染器使用，不保存公司专用构建脚本。
 - `report/`：最终 PDF；若环境不能生成 PDF，存放完整 Markdown 或 HTML 并说明限制。
 
 最终报告采用稳定文件名：
@@ -19,6 +19,8 @@ output/a-share-filing-review/
 ```text
 <证券代码>_<公司简称>_招股书与财报解读_<YYYYMMDD>.pdf
 ```
+
+报告生成统一使用 Skill 内的 `scripts/build_report.py`；报告内容遵循 [report-data-schema.md](report-data-schema.md)。
 
 交付前检查：
 
