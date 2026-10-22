@@ -13,6 +13,8 @@ required = [
     SKILL / "references" / "analysis-framework.md",
     SKILL / "references" / "reader-guide.md",
     SKILL / "references" / "output-convention.md",
+    SKILL / "references" / "report-design.md",
+    SKILL / "references" / "value-investing.md",
     ROOT / "adapters" / "trae" / "project_rules.md",
     ROOT / "adapters" / "trae" / "custom-agent-prompt.md",
     ROOT / "adapters" / "generic" / "AGENTS.md",

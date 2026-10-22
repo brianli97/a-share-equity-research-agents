@@ -12,7 +12,7 @@ description: Download official prospectuses and recent periodic reports for an A
 - 使用截至任务执行日可获得的最新官方披露。
 - 下载发行上市时的正式招股说明书；如官方历史文件不可得，明确说明并降低替代材料的证据等级。
 - 下载最近一个完整会计年度的年度报告，以及之后最新的季度报告或半年度报告。
-- 生成约 10–18 页的详细 PDF，并保留一页结论摘要。
+- 生成约 14–22 页的详细 PDF，并保留一页结论摘要；材料复杂时以分析完整为先，不为控制页数删掉关键判断。
 - 不主动提供买卖建议或目标价。
 
 用户可指定截止日、篇幅、估值和关注主题。公司名称有歧义且无法通过官方资料唯一识别时再询问。
@@ -23,6 +23,8 @@ description: Download official prospectuses and recent periodic reports for an A
 2. 读取 [references/analysis-framework.md](references/analysis-framework.md)，确定分析范围。
 3. 读取 [references/reader-guide.md](references/reader-guide.md)，生成面向普通投资者的阅读路线、风险检查和战略跟踪。
 4. 读取 [references/output-convention.md](references/output-convention.md)，确定目录和交付方式。
+5. 读取 [references/report-design.md](references/report-design.md)，使用统一视觉系统并执行防重叠检查。
+6. 读取 [references/value-investing.md](references/value-investing.md)，形成有证据、可证伪的价值投资判断。
 
 ## 工作流
 
@@ -32,9 +34,10 @@ description: Download official prospectuses and recent periodic reports for an A
 4. 验证 PDF 签名、文件大小、页数和可提取文本；扫描件需要 OCR 并抽查关键表格。
 5. 提取统一数据表，保留原始单位和页码。派生指标标记为“计算值”并给出公式。
 6. 按分析框架完成业务、行业、收入、利润、现金流、资产质量、治理、募投和风险分析。报告必须列示上市板块、官方行业分类、主要市场概念及其业务暴露占比。优先使用分行业或分产品/服务披露值；无法直接映射概念时，可基于官方业务资料作区间估算，但必须展示依据、算法、重叠关系、可信度和限制，不把估算写成公司披露。用管理层表述、实际投入、财务变化和经营成果交叉验证发展战略。
-7. 先写结论再写证据；专业术语首次出现时给一句通俗解释；图表注明单位、期间和来源。报告加入“读者如何自己复核”和“战略兑现跟踪表”，但不堆砌教科书内容。
-8. 使用平台已有的 PDF 或文档工具生成报告并逐页检查。若平台不能生成 PDF，先交付完整 Markdown 或 HTML，并明确说明限制。
-9. 同时保存原始披露和最终报告；最终回复列明报告期、来源限制和成品路径。
+7. 在事实分析之上形成价值投资章节：解释公司靠什么长期创造价值、护城河证据、资本配置记录、正常化盈利、主要下行风险、估值适用方法及投资逻辑失效条件。明确区分“公司披露”“计算结果”“分析判断”和“估算结果”；观点必须能被后续指标验证或推翻。
+8. 先写结论再写证据；专业术语首次出现时给一句通俗解释；图表注明单位、期间和来源。报告加入“读者如何自己复核”和“战略兑现跟踪表”，但不堆砌教科书内容。
+9. 使用平台已有的 PDF 或文档工具生成报告。遵循报告设计规范，逐页渲染检查信息层级、留白、裁切、重叠和表格拆页；任一页面不合格就修正并重新渲染。若平台不能生成 PDF，先交付完整 Markdown 或 HTML，并明确说明限制。
+10. 同时保存原始披露和最终报告；最终回复列明报告期、来源限制和成品路径。
 
 ## 证据纪律
 
