@@ -1,0 +1,17 @@
+{
+  "as_of_date": "2026-10-23",
+  "sources": [
+    {"company":"三花智控","type":"annual_report","title":"2025年年度报告","url":"https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0323/2026032301606_c.pdf"},
+    {"company":"三花智控","type":"market_snapshot","title":"行情与估值快照（2026-10-16）","url":"https://www.webull.hk/quote/szse-002050"},
+    {"company":"拓普集团","type":"annual_report","title":"2025年年度报告","url":"https://stockmc.xueqiu.com/202603/601689_20260324_GA6O.pdf"},
+    {"company":"拓普集团","type":"market_snapshot","title":"历史行情（2026-10-22）","url":"https://hk.investing.com/equities/ningbo-tuopu-group-co-ltd-historical-data"},
+    {"company":"绿的谐波","type":"annual_report","title":"2025年年度报告（更正后）","url":"https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12438944&stockid=688017"},
+    {"company":"绿的谐波","type":"regulatory_inquiry","title":"2025年年报问询函回复","url":"https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12438947&stockid=688017"},
+    {"company":"绿的谐波","type":"market_snapshot","title":"PE-TTM快照（2026-10-21）","url":"https://www.leetab.com/stock/sh688017/pe"},
+    {"company":"汇川技术","type":"annual_report","title":"2025年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-28/e297dfd8-47f7-44d9-9ec1-7a7a81537f8b.PDF"},
+    {"company":"汇川技术","type":"market_snapshot","title":"行情与财务快照（2026-10-23）","url":"https://quote.cfi.cn/quote11247_300124.html"},
+    {"company":"宇树科技","type":"prospectus","title":"首次公开发行股票并在科创板上市招股说明书","url":"https://static.sse.com.cn/stock/disclosure/announcement/c/202603/002178_20260320_QY8F.pdf?bookmarkId=69c2393c3a304daee27ddab2"},
+    {"company":"宇树科技","type":"listing_notice","title":"上市公告书","url":"https://static.cninfo.com.cn/finalpage/2026-08-18/1225478658.PDF"},
+    {"company":"宇树科技","type":"market_snapshot","title":"历史行情（2026-10-22）","url":"https://www.laocaifu.com/stock/688836/lishi"}
+  ]
+}

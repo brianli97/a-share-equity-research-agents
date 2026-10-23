@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "topic": "人形机器人核心公司",
+  "financial_period": "2025年度，辅以2026年中报/最新公开信息",
+  "price_date": null,
+  "price_note": "行情来源有效日期不完全一致（2026-10-16至2026-10-22），不启用同日估值优先排序。",
+  "companies": [
+    {
+      "security_code": "300124",
+      "short_name": "汇川技术",
+      "company_name": "深圳市汇川技术股份有限公司",
+      "evidence_quality": 0.96,
+      "dimension_scores": {"business_quality": 93, "growth_quality": 84, "profitability": 88, "cash_quality": 92, "balance_sheet": 86, "capital_governance": 87, "valuation": 82},
+      "facts": {"revenue_2025_bn": 45.105, "revenue_yoy_pct": 21.77, "net_profit_2025_bn": 5.05, "net_profit_yoy_pct": 17.84, "ocf_2025_bn": 6.681, "roe_pct": 16.34, "indicative_pe": 27.65},
+      "thesis": "工控与新能源汽车电驱形成双支柱，机器人关节/驱动布局具备技术邻接性；规模、现金流和研发体系是五家公司中最均衡的。",
+      "risk": "机器人业务尚未成为主要利润来源；通用自动化周期、价格竞争与汽车客户集中度会影响盈利。"
+    },
+    {
+      "security_code": "601689",
+      "short_name": "拓普集团",
+      "company_name": "宁波拓普集团股份有限公司",
+      "evidence_quality": 0.93,
+      "dimension_scores": {"business_quality": 86, "growth_quality": 68, "profitability": 78, "cash_quality": 91, "balance_sheet": 75, "capital_governance": 79, "valuation": 78},
+      "facts": {"revenue_2025_bn": 29.581, "revenue_yoy_pct": 11.21, "net_profit_2025_bn": 2.779, "net_profit_yoy_pct": -7.38, "ocf_2025_bn": 4.482, "indicative_price": 42.34},
+      "thesis": "汽车零部件平台化与大客户协同能力突出，线性执行器等机器人增量方向具备制造放大潜力；2025年经营现金流强。",
+      "risk": "2025年利润逆势下滑、资本开支较重，机器人量产兑现仍依赖客户节奏，不能把定点等同于收入。"
+    },
+    {
+      "security_code": "002050",
+      "short_name": "三花智控",
+      "company_name": "浙江三花智能控制股份有限公司",
+      "evidence_quality": 0.95,
+      "dimension_scores": {"business_quality": 91, "growth_quality": 77, "profitability": 87, "cash_quality": 89, "balance_sheet": 84, "capital_governance": 82, "valuation": 62},
+      "facts": {"revenue_2025_bn": 31.012, "revenue_yoy_pct": 10.97, "net_profit_2025_bn": 4.063, "net_profit_yoy_pct": 31.10, "ocf_2025_bn": 5.091, "indicative_pe": 46.16},
+      "thesis": "制冷控制与新能源汽车热管理构成高质量现金流底盘，机电执行器为机器人可选成长项；盈利与现金流匹配度较好。",
+      "risk": "机器人贡献披露不足，当前估值已包含较多成长预期；2026年上半年利润同比承压。"
+    },
+    {
+      "security_code": "688017",
+      "short_name": "绿的谐波",
+      "company_name": "苏州绿的谐波传动科技股份有限公司",
+      "evidence_quality": 0.94,
+      "dimension_scores": {"business_quality": 82, "growth_quality": 90, "profitability": 81, "cash_quality": 87, "balance_sheet": 80, "capital_governance": 72, "valuation": 28},
+      "facts": {"revenue_2025_bn": 0.571, "revenue_yoy_pct": 47.0, "net_profit_2025_bn": 0.124, "net_profit_yoy_pct": 121.0, "ocf_2025_bn": 0.152, "gross_margin_pct": 36.91, "indicative_pe": 334.9},
+      "thesis": "谐波减速器纯度高、2025年增长和回款显著改善，是五家公司中机器人零部件暴露最直接者之一。",
+      "risk": "体量小、估值极高，年报曾收到监管问询；客户、订单与需求持续性需要连续季度验证。"
+    },
+    {
+      "security_code": "688836",
+      "short_name": "宇树科技",
+      "company_name": "宇树科技股份有限公司",
+      "evidence_quality": 0.78,
+      "dimension_scores": {"business_quality": 88, "growth_quality": 99, "profitability": 86, "cash_quality": 91, "balance_sheet": 83, "capital_governance": 55, "valuation": 8},
+      "facts": {"revenue_2025_bn": 1.708, "revenue_yoy_pct": 335.36, "net_profit_2025_bn": 0.288, "ocf_2025_bn": 0.672, "humanoid_revenue_2025_bn": 0.880, "indicative_price": 520.0},
+      "thesis": "人形与四足机器人本体龙头，2025年收入、出货与现金流爆发，产业纯度和成长弹性最高。",
+      "risk": "上市历史极短、治理与周期证据有限，产品需求耐久性和高增长基数待检验；市场定价显著透支当前利润。"
+    }
+  ]
+}

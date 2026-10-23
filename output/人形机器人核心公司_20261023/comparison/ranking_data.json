@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-23T09:54:11.256039+00:00",
+  "input": "peer_data.json",
+  "topic": "人形机器人核心公司",
+  "financial_period": "2025年度，辅以2026年中报/最新公开信息",
+  "price_date": null,
+  "scenarios": {
+    "quality_first": {
+      "enabled": true,
+      "weights": {
+        "business_quality": 25.0,
+        "growth_quality": 12.0,
+        "profitability": 18.0,
+        "cash_quality": 18.0,
+        "balance_sheet": 12.0,
+        "capital_governance": 15.0,
+        "valuation": 0.0
+      },
+      "ranking": [
+        {
+          "security_code": "300124",
+          "short_name": "汇川技术",
+          "score": 89.1,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.96,
+          "confidence": 0.96,
+          "rank": 1,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "002050",
+          "short_name": "三花智控",
+          "score": 86.05,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.95,
+          "confidence": 0.95,
+          "rank": 2,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "688836",
+          "short_name": "宇树科技",
+          "score": 83.95,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.78,
+          "confidence": 0.78,
+          "rank": 3,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "688017",
+          "short_name": "绿的谐波",
+          "score": 81.94,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.94,
+          "confidence": 0.94,
+          "rank": 4,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "601689",
+          "short_name": "拓普集团",
+          "score": 80.93,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.93,
+          "confidence": 0.93,
+          "rank": 5,
+          "rank_status": "ranked"
+        }
+      ]
+    },
+    "growth_first": {
+      "enabled": true,
+      "weights": {
+        "business_quality": 18.0,
+        "growth_quality": 27.0,
+        "profitability": 15.0,
+        "cash_quality": 12.0,
+        "balance_sheet": 8.0,
+        "capital_governance": 10.0,
+        "valuation": 0.0
+      },
+      "ranking": [
+        {
+          "security_code": "300124",
+          "short_name": "汇川技术",
+          "score": 88.04,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.96,
+          "confidence": 0.96,
+          "rank": 1,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "688836",
+          "short_name": "宇树科技",
+          "score": 87.26,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.78,
+          "confidence": 0.78,
+          "rank": 2,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "002050",
+          "short_name": "三花智控",
+          "score": 84.24,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.95,
+          "confidence": 0.95,
+          "rank": 3,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "688017",
+          "short_name": "绿的谐波",
+          "score": 83.61,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.94,
+          "confidence": 0.94,
+          "rank": 4,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "601689",
+          "short_name": "拓普集团",
+          "score": 78.18,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.93,
+          "confidence": 0.93,
+          "rank": 5,
+          "rank_status": "ranked"
+        }
+      ]
+    },
+    "valuation_first": {
+      "enabled": false,
+      "reason": "A common price_date and valuation score for every company are required.",
+      "weights": {
+        "business_quality": 20.0,
+        "growth_quality": 10.0,
+        "profitability": 15.0,
+        "cash_quality": 15.0,
+        "balance_sheet": 10.0,
+        "capital_governance": 10.0,
+        "valuation": 20.0
+      },
+      "ranking": []
+    }
+  }
+}
