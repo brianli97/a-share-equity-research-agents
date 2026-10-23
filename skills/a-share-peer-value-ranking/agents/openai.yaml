@@ -1,0 +1,7 @@
+interface:
+  display_name: "A股同行价值比较"
+  short_description: "汇总同行财报，输出价值投资排序、建议分层与可复核PDF"
+  default_prompt: "使用 $a-share-peer-value-ranking 横向比较同行公司的财报质量、成长与安全边际，按价值投资研究优先级排序并生成PDF报告。"
+policy:
+  allow_implicit_invocation: true
+
