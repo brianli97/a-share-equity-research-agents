@@ -1,0 +1,21 @@
+{
+  "retrieved_at": "2026-10-23",
+  "sources": [
+    {"id":"S1","level":1,"title":"工业和信息化部：《人形机器人创新发展指导意见》","url":"https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20248/a14af1a12d16475881581dacc7d51366.pdf","published_at":"2023-11-02"},
+    {"id":"S2","level":1,"title":"工业和信息化部：《人形机器人创新发展指导意见》解读","url":"https://wap.miit.gov.cn/zwgk/zcjd/art/2023/art_e3f5686c2f0d49f9968b7ae011d558e1.html","published_at":"2023-11-02"},
+    {"id":"S3","level":1,"title":"上交所：宇树科技公司概况","url":"https://www.sse.com.cn/star/market/stocklist/info/overview/index.shtml?COMPANY_CODE=688836","as_of_date":"2026-10-23"},
+    {"id":"S4","level":1,"title":"上交所：宇树科技上市交易公告","url":"https://big5.sse.com.cn/site/cht/www.sse.com.cn/disclosure/announcement/listing/ipo/c/c_20260818_10829204.shtml","published_at":"2026-08-18"},
+    {"id":"S5","level":1,"title":"宇树科技招股说明书","url":"https://static.sse.com.cn/stock/disclosure/announcement/c/202603/002178_20260320_QY8F.pdf","published_at":"2026-03-20"},
+    {"id":"S6","level":1,"title":"汇川技术2025年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-28/e297dfd8-47f7-44d9-9ec1-7a7a81537f8b.PDF","period_end":"2025-12-31"},
+    {"id":"S7","level":1,"title":"江苏雷利2025年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/ce52df06-4033-4610-9662-208127e41746.PDF","period_end":"2025-12-31"},
+    {"id":"S8","level":1,"title":"兆威机电2025年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2026-03-31/6df2c5df-7140-4a1f-b246-2cb97c16d228.PDF","period_end":"2025-12-31"},
+    {"id":"S9","level":1,"title":"中大力德2025年年度报告","url":"https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-04-16/134ab42c-679a-4486-8851-df587edb1754.PDF","period_end":"2025-12-31"},
+    {"id":"S10","level":1,"title":"埃斯顿2025年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2026-03-31/328f79fe-ef5f-42c5-8a1f-8bbaeb775995.PDF","period_end":"2025-12-31"},
+    {"id":"S11","level":1,"title":"双环传动2025年年度报告","url":"https://static.cninfo.com.cn/finalpage/2026-04-24/1225170753.PDF","period_end":"2025-12-31"},
+    {"id":"S12","level":1,"title":"奥比中光2025年度向特定对象发行A股股票募集说明书","url":"https://static.sse.com.cn/stock/disclosure/announcement/c/202507/688322_20250731_HMJC.pdf","published_at":"2025-07-31"},
+    {"id":"S13","level":3,"title":"机器人设备产业链30家A股公司梳理（候选发现）","url":"https://www.sina.cn/news/detail/5330890567977123.html","retrieved_at":"2026-10-23"},
+    {"id":"S14","level":3,"title":"人形机器人产业链研究：核心环节关注清单（候选发现）","url":"https://pdf.dfcfw.com/pdf/H3_AP202312291615469702_1.pdf","published_at":"2023-12-29"},
+    {"id":"S15","level":3,"title":"机械行业周报：人形机器人产业链（候选发现）","url":"https://pdf.dfcfw.com/pdf/H3_AP202411071640757758_1.pdf","published_at":"2024-11-07"},
+    {"id":"S16","level":1,"title":"拓斯达2024年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2025-04-21/2f8546b3-bd94-4efd-aad3-87e0ad4d032b.PDF","period_end":"2024-12-31"}
+  ]
+}

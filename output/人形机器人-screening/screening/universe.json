@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-23",
+  "topic": {
+    "name": "人形机器人产业链",
+    "type": "custom_value_chain",
+    "definition": "直接从事人形/通用机器人整机，或提供关节执行器、减速器、丝杠、电机驱动、力觉/视觉传感、运动控制及工业具身平台的A股公司。",
+    "included_segments": ["整机与组件", "关节与执行器", "减速器", "丝杠与轴承", "电机与驱动", "力觉与视觉传感", "运动控制", "工业具身平台"],
+    "excluded_segments": ["仅有概念标签", "仅参股且无业务协同证据", "纯下游应用且无核心机器人能力", "非A股证券"]
+  },
+  "scope": {
+    "markets": ["SSE", "STAR", "SZSE", "ChiNext", "BSE"],
+    "as_of_date": "2026-10-23",
+    "financial_period": "2025-12-31",
+    "top_n": 20,
+    "candidate_count": 60,
+    "eligibility_rules": [
+      "已上市A股，退市整理期证券排除",
+      "ST、*ST、长期停牌及上市未满12个月不静默删除而单独标记",
+      "至少存在一项可核验的产品、研发、客户、产能或正式战略证据与人形机器人产业链相关",
+      "未经正式披露的客户传闻不作为入选事实"
+    ]
+  },
+  "methodology": {
+    "mode": "composite",
+    "score_scale": "0-100 analyst ordinal score, not a market forecast",
+    "dimensions": ["产业链相关性", "规模与行业地位", "制造与财务基础", "商业化阶段", "公开关注度代理", "证据质量", "风险惩罚"],
+    "composite_weights": {"relevance": 30, "leadership": 20, "fundamental": 20, "commercialization": 15, "attention_proxy": 5, "evidence": 10},
+    "missing_data": "不填零；降低证据等级与综合分，并列入data_gaps。",
+    "attention_method": "2026-08-24至2026-10-23公开公告、上市事件、新闻与产业链讨论可见度代理；未取得统一成交额和换手率。",
+    "sensitivity_scenarios": {
+      "quality_first": "提高既有主营盈利质量与制造规模权重",
+      "growth_purity_first": "提高人形业务纯度与商业化进展权重",
+      "valuation_first": "本期停用，因缺少统一交易日估值数据"
+    }
+  },
+  "rankings": {
+    "leader": {"codes": ["688836", "002050", "601689", "300124", "688017", "002472", "601100", "002747", "603662", "688322"], "rule": "产业地位、规模制造能力和直接业务证据"},
+    "attention": {"codes": ["688836", "002050", "601689", "603009", "688017", "603667", "603662", "003021", "300660", "300124"], "rule": "近60日公开信息可见度代理，非行情热度"},
+    "fundamental": {"codes": ["300124", "002050", "601689", "601100", "002472", "688836", "688017", "603728", "603662", "002747"], "rule": "既有主营业务规模、制造基础与盈利韧性的定性排序"},
+    "composite": {"codes": ["688836", "002050", "601689", "688017", "300124", "002472", "603662", "603009", "603667", "601100", "603728", "003021", "300660", "002896", "002747", "688322", "002979", "688160", "300024", "300607"], "rule": "相关性为准入门槛，规模、质量、商业化与证据综合排序"}
+  },
+  "companies": [
+    {
+      "security_code": "688836", "exchange": "SSE-STAR", "company_name": "宇树科技股份有限公司", "short_name": "宇树科技", "official_industry": "机器人制造相关，以上交所披露为准", "theme_role": "人形与四足机器人整机、组件及具身模型",
+      "business_exposure": {"value": null, "range": null, "basis": "招股说明书披露核心技术相关产品收入占营业收入比例2025年1-9月为98.93%；该口径包含四足、人形及组件，并非单独的人形收入。", "is_estimate": false, "confidence": "high"},
+      "metrics": {"listing_date": "2026-08-19", "core_technology_revenue_ratio": {"value": 98.93, "unit": "%", "period_end": "2025-09-30", "source_id": "S5"}},
+      "scores": {"composite": 92, "relevance": 100, "evidence": 95}, "ranks": {"composite": 1, "leader": 1, "attention": 1, "fundamental": 6},
+      "included_reason": ["A股稀缺的直接通用人形/四足机器人整机公司", "核心技术产品已形成大比例收入"], "risks": ["上市未满12个月", "次新股估值与波动风险", "人形与四足收入需拆分"], "evidence_level": "A", "data_gaps": ["2026年完整定期报告", "人形机器人单独收入和毛利"], "deep_review_questions": ["人形与四足机器人收入、毛利和出货如何拆分？", "客户集中度与关联交易是否影响增长质量？"], "source_ids": ["S3", "S4", "S5"]
+    },
+    {
+      "security_code": "002050", "exchange": "SZSE", "company_name": "浙江三花智能控制股份有限公司", "short_name": "三花智控", "official_industry": "通用设备/汽车零部件相关", "theme_role": "机电执行器及总成",
+      "business_exposure": {"value": null, "range": null, "basis": "公司具备机电执行和规模制造基础；本轮未取得单独人形机器人收入披露。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 86, "relevance": 85, "evidence": 65}, "ranks": {"composite": 2, "leader": 2, "attention": 2, "fundamental": 2},
+      "included_reason": ["精密制造和汽车零部件规模基础强", "执行器总成是人形核心高价值环节"], "risks": ["人形收入未单独披露", "市场预期可能领先于业绩兑现"], "evidence_level": "B", "data_gaps": ["机器人收入", "量产客户和产能利用率"], "deep_review_questions": ["机器人资本开支和在建产能对应哪些产品？", "客户认证何时转为批量收入？"], "source_ids": ["S13", "S15"]
+    },
+    {
+      "security_code": "601689", "exchange": "SSE", "company_name": "宁波拓普集团股份有限公司", "short_name": "拓普集团", "official_industry": "汽车制造业", "theme_role": "线性执行器与结构件总成",
+      "business_exposure": {"value": null, "range": null, "basis": "汽车零部件平台向机器人执行器延伸；本轮未取得人形业务独立收入。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 84, "relevance": 84, "evidence": 65}, "ranks": {"composite": 3, "leader": 3, "attention": 3, "fundamental": 3},
+      "included_reason": ["规模制造、客户开发与总成能力突出", "线性执行器与人形关节高度相关"], "risks": ["客户集中", "量产节奏不确定"], "evidence_level": "B", "data_gaps": ["人形收入", "定点和量产节点"], "deep_review_questions": ["执行器的技术路线、良率和单机价值量如何？"], "source_ids": ["S13", "S15"]
+    },
+    {
+      "security_code": "688017", "exchange": "SSE-STAR", "company_name": "苏州绿的谐波传动科技股份有限公司", "short_name": "绿的谐波", "official_industry": "通用设备制造业", "theme_role": "谐波减速器",
+      "business_exposure": {"value": null, "range": null, "basis": "主营谐波减速器与人形轻载关节高度匹配，但终端人形收入未独立披露。", "is_estimate": false, "confidence": "high"},
+      "metrics": {}, "scores": {"composite": 83, "relevance": 95, "evidence": 80}, "ranks": {"composite": 4, "leader": 5, "attention": 5, "fundamental": 7},
+      "included_reason": ["国产谐波减速器代表企业", "核心产品可直接用于机器人关节"], "risks": ["竞争加剧", "下游放量慢于预期", "估值波动"], "evidence_level": "A-", "data_gaps": ["人形客户收入", "新增产能利用率"], "deep_review_questions": ["人形客户贡献及价格趋势如何？"], "source_ids": ["S13", "S14"]
+    },
+    {
+      "security_code": "300124", "exchange": "SZSE-ChiNext", "company_name": "深圳市汇川技术股份有限公司", "short_name": "汇川技术", "official_industry": "自动化设备", "theme_role": "电机、驱动、仿生臂与关节模组",
+      "business_exposure": {"value": null, "range": null, "basis": "2025年报明确列示微型行星减速器、低压高功率密度直流驱动器、仿生臂和关节模组项目。", "is_estimate": false, "confidence": "high"},
+      "metrics": {"project_stage": "开发/验证阶段", "project_stage_as_of": "2025-12-31"}, "scores": {"composite": 82, "relevance": 87, "evidence": 90}, "ranks": {"composite": 5, "leader": 4, "attention": 10, "fundamental": 1},
+      "included_reason": ["运动控制与工业自动化平台能力强", "年报直接披露多项人形核心部件项目"], "risks": ["开发验证项目不等于收入", "主题业务占比可能较低"], "evidence_level": "A-", "data_gaps": ["量产转化", "人形收入和客户"], "deep_review_questions": ["开发/验证项目何时进入量产？", "机器人业务的资本回报要求是什么？"], "source_ids": ["S6"]
+    },
+    {
+      "security_code": "002472", "exchange": "SZSE", "company_name": "浙江双环传动机械股份有限公司", "short_name": "双环传动", "official_industry": "汽车制造业", "theme_role": "RV减速器与精密齿轮",
+      "business_exposure": {"value": null, "range": null, "basis": "2025年报确认工业机器人减速器业务与国产化趋势，人形专用收入未拆分。", "is_estimate": false, "confidence": "high"},
+      "metrics": {}, "scores": {"composite": 79, "relevance": 80, "evidence": 85}, "ranks": {"composite": 6, "leader": 6, "attention": 13, "fundamental": 5},
+      "included_reason": ["齿轮和工业机器人减速器制造基础强"], "risks": ["人形专用产品贡献不明确", "汽车周期敞口"], "evidence_level": "B+", "data_gaps": ["人形收入和客户"], "deep_review_questions": ["RV/谐波产品在人形场景的适配和订单进展？"], "source_ids": ["S11"]
+    },
+    {
+      "security_code": "603662", "exchange": "SSE", "company_name": "柯力传感科技股份有限公司", "short_name": "柯力传感", "official_industry": "仪器仪表制造业", "theme_role": "六维力与力觉传感",
+      "business_exposure": {"value": null, "range": null, "basis": "力传感器产业基础明确，人形领域客户/收入需以正式披露继续核验。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 77, "relevance": 88, "evidence": 65}, "ranks": {"composite": 7, "leader": 9, "attention": 7, "fundamental": 9},
+      "included_reason": ["六维力传感器是关节和足端关键部件", "传感器产业基础较强"], "risks": ["送样或定点不等于批量收入", "市场传闻较多"], "evidence_level": "B", "data_gaps": ["客户、定点、收入占比"], "deep_review_questions": ["六维力产品的量产、良率、客户与毛利如何？"], "source_ids": ["S14", "S15"]
+    },
+    {
+      "security_code": "603009", "exchange": "SSE", "company_name": "上海北特科技股份有限公司", "short_name": "北特科技", "official_industry": "汽车制造业", "theme_role": "行星滚柱丝杠与线性执行器",
+      "business_exposure": {"value": null, "range": null, "basis": "丝杠布局与人形线性执行器相关，相关收入未量化。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 75, "relevance": 90, "evidence": 55}, "ranks": {"composite": 8, "leader": 13, "attention": 4, "fundamental": 15},
+      "included_reason": ["行星滚柱丝杠是人形高价值量环节", "市场关注度高"], "risks": ["扩产不等于订单", "新业务良率和认证不确定"], "evidence_level": "B-", "data_gaps": ["订单、收入、良率和量产节点"], "deep_review_questions": ["丝杠设备到位、验证和客户订单分别处于何阶段？"], "source_ids": ["S14", "S15"]
+    },
+    {
+      "security_code": "603667", "exchange": "SSE", "company_name": "浙江五洲新春集团股份有限公司", "short_name": "五洲新春", "official_industry": "通用设备制造业", "theme_role": "丝杠、轴承和减速器轴承",
+      "business_exposure": {"value": null, "range": null, "basis": "轴承制造基础和丝杠布局与机器人关节相关，收入未单列。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 74, "relevance": 86, "evidence": 55}, "ranks": {"composite": 9, "leader": 14, "attention": 6, "fundamental": 14},
+      "included_reason": ["轴承工艺可向丝杠与关节部件延伸"], "risks": ["新业务尚处商业化验证", "资本开支回报不确定"], "evidence_level": "B-", "data_gaps": ["人形收入、客户、产能利用率"], "deep_review_questions": ["丝杠与轴承新产品何时形成批量收入？"], "source_ids": ["S14", "S15"]
+    },
+    {
+      "security_code": "601100", "exchange": "SSE", "company_name": "江苏恒立液压股份有限公司", "short_name": "恒立液压", "official_industry": "通用设备制造业", "theme_role": "精密丝杠与执行元件",
+      "business_exposure": {"value": null, "range": null, "basis": "精密制造与执行元件能力可迁移至机器人丝杠，主题收入未单独披露。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 73, "relevance": 72, "evidence": 65}, "ranks": {"composite": 10, "leader": 7, "attention": 17, "fundamental": 4},
+      "included_reason": ["制造质量和财务基础较强", "执行元件与丝杠能力具备延展性"], "risks": ["主题纯度低", "新产品验证周期长"], "evidence_level": "B", "data_gaps": ["机器人收入和客户"], "deep_review_questions": ["丝杠项目的技术路线、产能和认证进度？"], "source_ids": ["S14"]
+    },
+    {
+      "security_code": "603728", "exchange": "SSE", "company_name": "上海鸣志电器股份有限公司", "short_name": "鸣志电器", "official_industry": "电气机械和器材制造业", "theme_role": "空心杯电机与运动控制",
+      "business_exposure": {"value": null, "range": null, "basis": "电机、驱动及运动控制产品与灵巧手/关节匹配，终端人形收入未独立披露。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 72, "relevance": 84, "evidence": 65}, "ranks": {"composite": 11, "leader": 11, "attention": 12, "fundamental": 8},
+      "included_reason": ["空心杯电机和运动控制积累深"], "risks": ["需求放量不确定", "客户认证周期"], "evidence_level": "B+", "data_gaps": ["人形客户和收入"], "deep_review_questions": ["灵巧手电机的出货、单价和竞争格局？"], "source_ids": ["S13"]
+    },
+    {
+      "security_code": "003021", "exchange": "SZSE", "company_name": "深圳市兆威机电股份有限公司", "short_name": "兆威机电", "official_industry": "电气机械和器材制造业", "theme_role": "微型传动系统与灵巧手",
+      "business_exposure": {"value": null, "range": null, "basis": "2025年报明确机器人板块及A17、B06两款灵巧手产品，但未披露收入占比。", "is_estimate": false, "confidence": "high"},
+      "metrics": {"product_launch": "2025-07 A17/B06灵巧手"}, "scores": {"composite": 71, "relevance": 90, "evidence": 88}, "ranks": {"composite": 12, "leader": 15, "attention": 8, "fundamental": 13},
+      "included_reason": ["微型传动与灵巧手产品证据直接"], "risks": ["出货和盈利贡献未披露", "新品商业化风险"], "evidence_level": "A-", "data_gaps": ["客户、出货、收入和毛利"], "deep_review_questions": ["A17/B06是否形成批量订单及毛利？"], "source_ids": ["S8"]
+    },
+    {
+      "security_code": "300660", "exchange": "SZSE-ChiNext", "company_name": "江苏雷利电机股份有限公司", "short_name": "江苏雷利", "official_industry": "电气机械和器材制造业", "theme_role": "空心杯电机、丝杠、减速器与灵巧手",
+      "business_exposure": {"value": null, "range": null, "basis": "2025年报披露多类人形核心零部件及两款灵巧手，产品多处测试或送样阶段。", "is_estimate": false, "confidence": "high"},
+      "metrics": {"commercial_stage": "测试/送样"}, "scores": {"composite": 70, "relevance": 92, "evidence": 90}, "ranks": {"composite": 13, "leader": 16, "attention": 9, "fundamental": 12},
+      "included_reason": ["零部件覆盖面广", "灵巧手已有明确产品"], "risks": ["测试送样尚未兑现为收入", "业务线较多"], "evidence_level": "A-", "data_gaps": ["主题收入、客户和订单"], "deep_review_questions": ["送样项目的转单率和量产时点？"], "source_ids": ["S7"]
+    },
+    {
+      "security_code": "002896", "exchange": "SZSE", "company_name": "宁波中大力德智能传动股份有限公司", "short_name": "中大力德", "official_industry": "通用设备制造业", "theme_role": "精密减速器与驱动一体化",
+      "business_exposure": {"value": null, "range": null, "basis": "2025年报明确人形机器人对减速器的潜在增量及产业化风险。", "is_estimate": false, "confidence": "high"},
+      "metrics": {}, "scores": {"composite": 69, "relevance": 88, "evidence": 82}, "ranks": {"composite": 14, "leader": 12, "attention": 11, "fundamental": 16},
+      "included_reason": ["精密减速器产品覆盖较完整"], "risks": ["人形产业化不及预期", "规模和竞争压力"], "evidence_level": "B+", "data_gaps": ["人形专用收入和客户"], "deep_review_questions": ["人形产品与工业减速器的收入如何区分？"], "source_ids": ["S9"]
+    },
+    {
+      "security_code": "002747", "exchange": "SZSE", "company_name": "南京埃斯顿自动化股份有限公司", "short_name": "埃斯顿", "official_industry": "自动化设备", "theme_role": "工业机器人、伺服与运动控制",
+      "business_exposure": {"value": null, "range": null, "basis": "2025年报确认工业机器人和自主运动控制平台优势，具身智能布局明确。", "is_estimate": false, "confidence": "high"},
+      "metrics": {}, "scores": {"composite": 68, "relevance": 78, "evidence": 85}, "ranks": {"composite": 15, "leader": 8, "attention": 16, "fundamental": 10},
+      "included_reason": ["本体、控制器、伺服和应用场景基础完整"], "risks": ["人形业务纯度低", "盈利和现金流质量需核验"], "evidence_level": "B+", "data_gaps": ["人形产品收入和订单"], "deep_review_questions": ["具身项目是否形成批量交付和正毛利？"], "source_ids": ["S10"]
+    },
+    {
+      "security_code": "688322", "exchange": "SSE-STAR", "company_name": "奥比中光科技集团股份有限公司", "short_name": "奥比中光", "official_industry": "计算机、通信和其他电子设备制造业", "theme_role": "3D视觉与仿生视觉传感",
+      "business_exposure": {"value": null, "range": null, "basis": "募集说明书明确机器人3D视觉应用和人形专用视觉方向。", "is_estimate": false, "confidence": "high"},
+      "metrics": {}, "scores": {"composite": 67, "relevance": 86, "evidence": 85}, "ranks": {"composite": 16, "leader": 10, "attention": 15, "fundamental": 18},
+      "included_reason": ["3D视觉是环境感知核心部件", "正式发行材料提供直接证据"], "risks": ["人形收入占比未披露", "研发和盈利波动"], "evidence_level": "A-", "data_gaps": ["人形客户与收入"], "deep_review_questions": ["机器人客户收入、毛利和应收质量如何？"], "source_ids": ["S12"]
+    },
+    {
+      "security_code": "002979", "exchange": "SZSE", "company_name": "深圳市雷赛智能控制股份有限公司", "short_name": "雷赛智能", "official_industry": "自动化设备", "theme_role": "伺服、运动控制与空心杯电机",
+      "business_exposure": {"value": null, "range": null, "basis": "产品方向与人形执行链匹配，量产收入证据不足。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 65, "relevance": 80, "evidence": 55}, "ranks": {"composite": 17, "leader": 18, "attention": 14, "fundamental": 11},
+      "included_reason": ["运动控制产品矩阵与机器人适配"], "risks": ["主题收入不足", "竞争激烈"], "evidence_level": "B", "data_gaps": ["客户和量产收入"], "deep_review_questions": ["人形相关电机与驱动的客户验证进展？"], "source_ids": ["S15"]
+    },
+    {
+      "security_code": "688160", "exchange": "SSE-STAR", "company_name": "上海步科自动化股份有限公司", "short_name": "步科股份", "official_industry": "仪器仪表/自动化设备相关", "theme_role": "运动控制与无框力矩电机",
+      "business_exposure": {"value": null, "range": null, "basis": "机器人运动控制与电机产品基础明确，人形收入未独立披露。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 63, "relevance": 79, "evidence": 55}, "ranks": {"composite": 18, "leader": 19, "attention": 18, "fundamental": 17},
+      "included_reason": ["无框力矩电机和控制系统可用于关节"], "risks": ["规模较小", "人形业务纯度待核验"], "evidence_level": "B", "data_gaps": ["订单、客户、收入"], "deep_review_questions": ["人形电机产品是否已定点和量产？"], "source_ids": ["S13"]
+    },
+    {
+      "security_code": "300024", "exchange": "SZSE-ChiNext", "company_name": "沈阳新松机器人自动化股份有限公司", "short_name": "机器人", "official_industry": "自动化设备", "theme_role": "工业机器人本体与系统集成",
+      "business_exposure": {"value": null, "range": null, "basis": "机器人本体与系统集成主营明确，人形产品商业化程度需继续核验。", "is_estimate": false, "confidence": "medium"},
+      "metrics": {}, "scores": {"composite": 61, "relevance": 75, "evidence": 65}, "ranks": {"composite": 19, "leader": 17, "attention": 19, "fundamental": 20},
+      "included_reason": ["机器人本体和场景积累深"], "risks": ["盈利质量", "人形商业化不确定"], "evidence_level": "B", "data_gaps": ["人形产品订单与收入"], "deep_review_questions": ["人形产品与传统工业机器人如何形成协同和收入？"], "source_ids": ["S13"]
+    },
+    {
+      "security_code": "300607", "exchange": "SZSE-ChiNext", "company_name": "广东拓斯达科技股份有限公司", "short_name": "拓斯达", "official_industry": "自动化设备", "theme_role": "工业具身平台与仿人机器人",
+      "business_exposure": {"value": null, "range": null, "basis": "2024年报披露双臂机器人及轮式移动仿人/人形机器人开发方向。", "is_estimate": false, "confidence": "high"},
+      "metrics": {"disclosure_period_end": "2024-12-31"}, "scores": {"composite": 60, "relevance": 77, "evidence": 75}, "ranks": {"composite": 20, "leader": 20, "attention": 20, "fundamental": 19},
+      "included_reason": ["工业场景、运动控制和机器人本体协同"], "risks": ["战略投入期", "项目尚未规模商业化"], "evidence_level": "B", "data_gaps": ["2025完整业务进展", "人形订单与收入"], "deep_review_questions": ["仿人/人形产品是否已在客户产线形成复购？"], "source_ids": ["S16"]
+    }
+  ],
+  "excluded_companies": [
+    {"security_code":"000333","short_name":"美的集团","excluded_reason":"库卡与机器人基础强，但集团业务过于分散，主题纯度在本权重下未进Top20。"},
+    {"security_code":"300007","short_name":"汉威科技","excluded_reason":"柔性触觉传感方向相关，量产客户与收入证据不足。"},
+    {"security_code":"301413","short_name":"安培龙","excluded_reason":"力传感方向相关，上市历史和人形商业化证据仍需补强。"},
+    {"security_code":"300354","short_name":"东华测试","excluded_reason":"力学测试与传感具有关联，终端人形收入未量化。"},
+    {"security_code":"002600","short_name":"领益智造","excluded_reason":"零部件与组装布局较广，人形业务纯度和客户证据不足。"},
+    {"security_code":"300115","short_name":"长盈精密","excluded_reason":"精密结构件与灵巧手方向受关注，主题收入未单列。"},
+    {"security_code":"300580","short_name":"贝斯特","excluded_reason":"丝杠布局相关，量产收入和客户证据不足。"},
+    {"security_code":"000837","short_name":"秦川机床","excluded_reason":"减速器与机床能力相关，业务规模与人形纯度相对不足。"},
+    {"security_code":"301368","short_name":"丰立智能","excluded_reason":"精密减速器相关但规模较小，量产验证不足。"},
+    {"security_code":"001306","short_name":"夏厦精密","excluded_reason":"精密齿轮和减速器相关，主题业务兑现证据有限。"},
+    {"security_code":"603119","short_name":"浙江荣泰","excluded_reason":"绝缘材料与结构件方向有延伸，直接人形收入证据不足。"},
+    {"security_code":"301550","short_name":"斯菱股份","excluded_reason":"轴承及机器人减速器布局相关，商业化尚早。"},
+    {"security_code":"603809","short_name":"豪能股份","excluded_reason":"精密传动布局相关，人形收入和客户未清晰披露。"},
+    {"security_code":"002779","short_name":"中坚科技","excluded_reason":"机器人整机与投资布局受关注，证据与财务可比性不足。"},
+    {"security_code":"002009","short_name":"天奇股份","excluded_reason":"工业场景合作明确，但更偏应用集成，核心部件纯度较低。"},
+    {"security_code":"002139","short_name":"拓邦股份","excluded_reason":"控制器和电机相关，集团业务分散且人形收入未量化。"},
+    {"security_code":"002402","short_name":"和而泰","excluded_reason":"控制器方向相关，直接人形业务证据不足。"},
+    {"security_code":"300496","short_name":"中科创达","excluded_reason":"操作系统和边缘智能相关，但与具体人形收入映射不足。"},
+    {"security_code":"688343","short_name":"云天励飞","excluded_reason":"AI算力和算法相关，产业链边界较远且盈利阶段不同。"},
+    {"security_code":"688213","short_name":"思特威-W","excluded_reason":"视觉芯片可用于机器人，但终端人形收入难以量化。"},
+    {"security_code":"300403","short_name":"汉宇集团","excluded_reason":"子公司减速器布局相关，合并口径主题纯度有限。"},
+    {"security_code":"002553","short_name":"南方精工","excluded_reason":"轴承和精密零部件相关，直接业务证据不足。"},
+    {"security_code":"603283","short_name":"赛腾股份","excluded_reason":"自动化设备与机器人制造相关，更多属于生产设备环节。"},
+    {"security_code":"603416","short_name":"信捷电气","excluded_reason":"运动控制相关，人形终端业务证据不足。"},
+    {"security_code":"688320","short_name":"禾川科技","excluded_reason":"伺服与控制基础相关，但当前财务与业务兑现需进一步核验。"},
+    {"security_code":"300503","short_name":"昊志机电","excluded_reason":"电主轴与机器人核心部件布局相关，经营风险和兑现度影响排名。"},
+    {"security_code":"002046","short_name":"国机精工","excluded_reason":"精密轴承与材料相关，人形业务收入未拆分。"},
+    {"security_code":"000988","short_name":"华工科技","excluded_reason":"传感与激光加工能力相关，主题链条较分散。"},
+    {"security_code":"002273","short_name":"水晶光电","excluded_reason":"光学感知相关，机器人终端收入证据不足。"},
+    {"security_code":"002475","short_name":"立讯精密","excluded_reason":"精密制造能力强，但人形业务纯度和正式披露不足。"},
+    {"security_code":"002241","short_name":"歌尔股份","excluded_reason":"声学与传感制造相关，人形业务映射不足。"},
+    {"security_code":"300433","short_name":"蓝思科技","excluded_reason":"结构件与精密制造受关注，主题收入未量化。"},
+    {"security_code":"002938","short_name":"鹏鼎控股","excluded_reason":"PCB供应链相关但非人形专用，业务纯度低。"},
+    {"security_code":"002920","short_name":"德赛西威","excluded_reason":"计算平台与控制能力可迁移，但当前主营仍以汽车智能化为主。"},
+    {"security_code":"002527","short_name":"新时达","excluded_reason":"工业机器人和控制相关，财务质量与人形兑现度影响排名。"},
+    {"security_code":"002698","short_name":"博实股份","excluded_reason":"工业自动化与机器人应用强，但通用人形关联度较低。"},
+    {"security_code":"603666","short_name":"亿嘉和","excluded_reason":"特种机器人产品明确，但通用人形产业链可比性较弱。"},
+    {"security_code":"688165","short_name":"埃夫特-U","excluded_reason":"工业机器人本体相关，亏损及人形商业化证据影响排名。"},
+    {"security_code":"301199","short_name":"迈赫股份","excluded_reason":"智能制造系统集成相关，核心人形产品证据不足。"},
+    {"security_code":"300276","short_name":"三丰智能","excluded_reason":"智能装备系统集成相关，主题纯度和财务质量不足。"}
+  ],
+  "sources": [
+    {"id":"S1","title":"工信部人形机器人创新发展指导意见","url":"https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20248/a14af1a12d16475881581dacc7d51366.pdf","level":1,"published_at":"2023-11-02","retrieved_at":"2026-10-23"},
+    {"id":"S3","title":"上交所宇树科技公司概况","url":"https://www.sse.com.cn/star/market/stocklist/info/overview/index.shtml?COMPANY_CODE=688836","level":1,"as_of_date":"2026-10-23","retrieved_at":"2026-10-23"},
+    {"id":"S5","title":"宇树科技招股说明书","url":"https://static.sse.com.cn/stock/disclosure/announcement/c/202603/002178_20260320_QY8F.pdf","level":1,"published_at":"2026-03-20","retrieved_at":"2026-10-23"},
+    {"id":"S6","title":"汇川技术2025年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-28/e297dfd8-47f7-44d9-9ec1-7a7a81537f8b.PDF","level":1,"period_end":"2025-12-31","retrieved_at":"2026-10-23"},
+    {"id":"S7","title":"江苏雷利2025年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/ce52df06-4033-4610-9662-208127e41746.PDF","level":1,"period_end":"2025-12-31","retrieved_at":"2026-10-23"},
+    {"id":"S8","title":"兆威机电2025年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2026-03-31/6df2c5df-7140-4a1f-b246-2cb97c16d228.PDF","level":1,"period_end":"2025-12-31","retrieved_at":"2026-10-23"},
+    {"id":"S9","title":"中大力德2025年年度报告","url":"https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-04-16/134ab42c-679a-4486-8851-df587edb1754.PDF","level":1,"period_end":"2025-12-31","retrieved_at":"2026-10-23"},
+    {"id":"S10","title":"埃斯顿2025年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2026-03-31/328f79fe-ef5f-42c5-8a1f-8bbaeb775995.PDF","level":1,"period_end":"2025-12-31","retrieved_at":"2026-10-23"},
+    {"id":"S11","title":"双环传动2025年年度报告","url":"https://static.cninfo.com.cn/finalpage/2026-04-24/1225170753.PDF","level":1,"period_end":"2025-12-31","retrieved_at":"2026-10-23"},
+    {"id":"S12","title":"奥比中光2025年度募集说明书","url":"https://static.sse.com.cn/stock/disclosure/announcement/c/202507/688322_20250731_HMJC.pdf","level":1,"published_at":"2025-07-31","retrieved_at":"2026-10-23"},
+    {"id":"S13","title":"机器人设备产业链30家A股公司梳理","url":"https://www.sina.cn/news/detail/5330890567977123.html","level":3,"retrieved_at":"2026-10-23"},
+    {"id":"S14","title":"人形机器人行业策略报告","url":"https://pdf.dfcfw.com/pdf/H3_AP202312291615469702_1.pdf","level":3,"published_at":"2023-12-29","retrieved_at":"2026-10-23"},
+    {"id":"S15","title":"机械行业周报：人形机器人产业链","url":"https://pdf.dfcfw.com/pdf/H3_AP202411071640757758_1.pdf","level":3,"published_at":"2024-11-07","retrieved_at":"2026-10-23"},
+    {"id":"S16","title":"拓斯达2024年年度报告","url":"https://disc.static.szse.cn/disc/disk03/finalpage/2025-04-21/2f8546b3-bd94-4efd-aad3-87e0ad4d032b.PDF","level":1,"period_end":"2024-12-31","retrieved_at":"2026-10-23"}
+  ],
+  "limitations": [
+    "多数公司未单独披露人形机器人收入，business_exposure不提供伪精确占比。",
+    "未取得覆盖全部公司的统一实时行情源，热度榜为公开信息代理，估值优先情景停用。",
+    "为保持可比性主要采用2025年报；2026年三季报仍在集中披露期。",
+    "未经公告确认的客户传闻不作为正式证据。",
+    "综合分为研究排序用的分析分，不是预期收益或买卖信号。"
+  ]
+}

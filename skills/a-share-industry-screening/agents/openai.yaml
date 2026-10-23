@@ -1,0 +1,6 @@
+interface:
+  display_name: "A股行业公司筛选"
+  short_description: "筛选行业龙头与高热度公司，输出可复核的Top-N候选池"
+  default_prompt: "使用 $a-share-industry-screening 筛选指定行业的 A 股前20家公司，并分别说明龙头地位、热度、业务相关性和风险。"
+policy:
+  allow_implicit_invocation: true
