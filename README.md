@@ -1,19 +1,30 @@
 # A股权益研究 Agent Skills
 
-面向 A 股研究的三个独立 Skill，由同一个仓库统一维护、安装和校验。
+面向 A 股研究的三个独立 Skill，由同一个仓库统一维护、安装和校验。它们分别解决“研究谁”“这家公司怎么样”和“同行中谁更值得优先研究”三个问题。
+
+## 三个 Skill 怎么选
+
+| Skill | 核心问题 | 典型输入 | 主要输出 | 能力边界 |
+| --- | --- | --- | --- | --- |
+| `a-share-industry-screening` | 这个行业或主题应该先研究哪些公司？ | 行业、主题或产业链环节；筛选模式；Top N | `screening/universe.json`、候选池和筛选报告 | 不替代单家公司财报深研，不直接给出买卖建议 |
+| `a-share-filing-review` | 这家公司的基本面、治理和主要风险怎么样？ | 一家 A 股公司的名称或代码 | 基于招股书和定期报告的溯源 PDF、`extracted/report_data.json` | 不负责多公司统一排名，不提供目标价或无条件买卖建议 |
+| `a-share-peer-value-ranking` | 同行中哪些公司更值得优先研究？ | 通常至少 3 家公司的标准化研究数据；统一口径的估值信息 | 同行比较、情景排名、研究优先级和 PDF 报告 | 不从全市场建立候选池；排名不等于直接投资建议 |
+
+`a-share-industry-screening` 支持龙头、热度、基本面和综合等筛选模式，默认可生成 Top 20 候选名单。`a-share-filing-review` 以公司官方披露文件为主要证据，生成单公司研究报告，并为同行比较提供结构化数据。`a-share-peer-value-ranking` 会统一报告期、指标定义和估值时点，从质量、成长、盈利与现金流、资产负债表、资本配置、治理及安全边际等维度形成多情景排序。
+
+## 推荐工作流
 
 ```text
-a-share-industry-screening
-  └─ 建立行业候选池和 Top 20 名单
-             ↓ screening/universe.json
-a-share-filing-review
-  └─ 逐家公司解读招股书和定期报告
-             ↓ extracted/report_data.json
-a-share-peer-value-ranking
-  └─ 统一可比口径并生成同行价值排序
+行业、主题或产业链环节
+  ↓ a-share-industry-screening
+候选公司池 / screening/universe.json
+  ↓ a-share-filing-review（逐家公司）
+单公司研究 PDF / extracted/report_data.json
+  ↓ a-share-peer-value-ranking
+同行比较、价值排序和研究优先级报告
 ```
 
-三个 Skill 可以串联使用，也可以单独调用。仓库合并不改变各自的触发条件、`SKILL.md` 或输出契约。
+三个 Skill 可以串联，也可以独立调用：已有明确公司时可直接使用 `a-share-filing-review`；已有同行名单及足够的标准化证据时可直接使用 `a-share-peer-value-ranking`；尚未确定研究对象时，先从 `a-share-industry-screening` 开始。仓库合并不改变各自的触发条件、`SKILL.md` 或输出契约。
 
 ## 仓库结构
 
@@ -74,14 +85,14 @@ scripts/
 ## 调用
 
 ```text
-使用 $a-share-industry-screening 筛选人形机器人产业链前20家A股公司。
+使用 $a-share-industry-screening，按综合模式筛选人形机器人产业链前 20 家 A 股公司，输出候选池和筛选报告。
 
-使用 $a-share-filing-review 分析万向钱潮的招股书和最近一年财报，生成PDF。
+使用 $a-share-filing-review，基于官方招股书和最近一期年度报告分析万向钱潮，生成带来源的 PDF 和结构化研究数据。
 
-使用 $a-share-peer-value-ranking 比较同行公司的质量、成长和估值，生成排序报告。
+使用 $a-share-peer-value-ranking，比较已完成单公司研究的同行公司，统一报告期和估值日期，从质量、成长和估值等维度生成多情景排序报告。
 ```
 
-完整研究建议按“行业筛选 → 单公司深研 → 同行价值排序”的顺序执行。具体证据政策、输出结构和安全边界以各 Skill 的 `SKILL.md` 及其 references 为准。
+完整研究建议按“行业筛选 → 单公司深研 → 同行价值排序”的顺序执行。同行估值比较应尽量采用同一价格日期，最终排名表示研究优先级，不构成无条件买卖建议。具体证据政策、输出结构和安全边界以各 Skill 的 `SKILL.md` 及其 references 为准。
 
 ## 校验
 
