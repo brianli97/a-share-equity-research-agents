@@ -28,5 +28,9 @@ python <skill目录>/scripts/build_report.py <输出目录>/extracted/report_dat
 - 指标卡：`{"type":"kpis","items":[{"value":"48.88 亿元","label":"营业收入"}]}`。
 - 表格：`{"type":"table","widths_mm":[35,45,96],"rows":[["表头1","表头2","表头3"],["...","...","..."]]}`。列宽合计不超过 176 mm。
 - 提示框：`{"type":"callout","tone":"risk","title":"关键风险","text":"..."}`。`tone` 可为 `positive`、`warning` 或 `risk`。
+- 导读：`{"type":"lead","text":"这一页用一句话说明要回答的问题。"}`。
+- 要点列表：`{"type":"bullets","items":["要点一","要点二"]}`，建议 3–6 项。
+- 信息卡：`{"type":"cards","items":[{"title":"优势","text":"...","tone":"positive"}]}`，每组 1–3 张。
+- 横向条形图：`{"type":"bars","max_value":100,"unit":"%","items":[{"label":"收入增速","value":32.5,"display":"32.5%","tone":"positive"}]}`。`value` 必须是可复核数值，`display` 保留读者看到的单位与精度。
 
 生成前检查必填字段、非空页面、表格列数与列宽；生成后仍须按视觉规范逐页渲染检查。结构化数据承载公司事实、计算、判断和引用，通用脚本只负责排版。

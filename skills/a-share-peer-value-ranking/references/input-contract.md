@@ -54,6 +54,7 @@
 - 数值指标必须带单位、期间/日期、来源和方向。`direction` 为 `higher` 或 `lower`。
 - 定性分必须带 `basis`，说明证据、反证和为何不是更高或更低。
 - 不使用从文字猜出的精确财务数字。无法取得时留空，并加入 `data_gaps`。
+- `industry_role` 必须具体到可比较环节，例如“刻蚀设备”“晶圆代工”“内存接口芯片”，不能只写“半导体”。跨环节样本把输出类型标记为 `cross_chain_research_priority`，不得使用 `peer_value_ranking`。
 
 ## 期间与单位
 

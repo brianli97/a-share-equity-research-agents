@@ -10,7 +10,7 @@ if [[ "$project_path" == "--update" ]]; then project_path="$PWD"; update="--upda
 if [[ "$skill" == "--update" ]]; then skill="all"; update="--update"; fi
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-all_skills=(a-share-industry-screening a-share-filing-review a-share-peer-value-ranking)
+all_skills=(a-share-industry-research-workflow a-share-industry-screening a-share-filing-review a-share-peer-value-ranking)
 
 usage() {
   echo "Usage: $0 <codex|claude|trae|generic> <user|project> [project-path] [all|skill-name] [--update]"
@@ -19,7 +19,7 @@ usage() {
 [[ -z "$update" || "$update" == "--update" ]] || { usage; exit 2; }
 case "$skill" in
   all) skills=("${all_skills[@]}") ;;
-  a-share-industry-screening|a-share-filing-review|a-share-peer-value-ranking) skills=("$skill") ;;
+  a-share-industry-research-workflow|a-share-industry-screening|a-share-filing-review|a-share-peer-value-ranking) skills=("$skill") ;;
   *) usage; exit 2 ;;
 esac
 

@@ -28,6 +28,10 @@ python <skill目录>/scripts/build_comparison_report.py <输出目录>/compariso
 - 指标卡：`{"type":"kpis","items":[{"value":"20家","label":"参评公司"}]}`，每组1至4项。
 - 表格：`{"type":"table","widths_mm":[12,28,35,101],"rows":[["排名","公司","分层","核心结论"],...]}`；列宽合计不超过176 mm。
 - 提示框：`{"type":"callout","tone":"positive","title":"价值投资建议","text":"..."}`；`tone` 为 `positive`、`warning` 或 `risk`。
+- 导读：`{"type":"lead","text":"本页解决的问题。"}`。
+- 要点列表：`{"type":"bullets","items":["要点一","要点二"]}`。
+- 信息卡：`{"type":"cards","items":[{"title":"质量领先","text":"...","tone":"positive"}]}`。
+- 横向条形图：`{"type":"bars","max_value":100,"unit":"分","items":[{"label":"公司A","value":88.2,"display":"88.2","tone":"positive"}]}`，用于分项分、增速和排名差异；必须同时显示数值。
 
 ## 必需页面
 
@@ -40,6 +44,8 @@ python <skill目录>/scripts/build_comparison_report.py <输出目录>/compariso
 7. 价值投资建议分层。
 8. 每家公司适用条件、核心证据、最大反证和失效条件。
 9. 数据缺口、来源与复核方法。
+
+报告应让非专业读者在不阅读原始财报的情况下理解“各公司做什么、为什么可比或不可比、名次由什么驱动、下一步验证什么”。专业术语首次出现时给出白话解释，并至少包含一页术语/方法说明。
 
 报告可以增加页数，但不得省略最终公司排列顺序和价值投资建议。公司很多时，先用总表列全，再为重点公司使用详细证据卡。
 

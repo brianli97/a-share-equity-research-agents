@@ -34,7 +34,7 @@ PDF 仅在用户要求时生成；不得删除 JSON 和 Markdown 原件。
 必要字段：
 
 - `topic`: `name`、`type`、`definition`、`included_segments`、`excluded_segments`。
-- `scope`: `markets`、`as_of_date`、`financial_period`、`top_n`、`eligibility_rules`。
+- `scope`: `markets`、`boards`、`excluded_boards`、`security_types`、`as_of_date`、`financial_period`、`top_n`、`eligibility_rules`。默认 `boards` 为 `SSE_MAIN`、`SZSE_MAIN`、`SZSE_CHINEXT`。
 - `methodology`: 筛选模式、指标定义、方向、标准化、权重、缺失处理和敏感性情景。
 - `rankings`: `leader`、`attention`、`fundamental`、`composite`，每项存证券代码数组和生成规则。
 - `sources`: 来源标题、URL、来源等级、披露/数据日期和访问日期。
@@ -45,6 +45,7 @@ PDF 仅在用户要求时生成；不得删除 JSON 和 Markdown 原件。
 {
   "security_code": "000000",
   "exchange": "SZSE",
+  "board": "SZSE_MAIN",
   "company_name": "示例股份有限公司",
   "short_name": "示例股份",
   "official_industry": "",
@@ -67,6 +68,8 @@ PDF 仅在用户要求时生成；不得删除 JSON 和 Markdown 原件。
   "source_ids": []
 }
 ```
+
+每家公司必须包含 `board`，且与 `scope.boards` 一致；不一致的证券移入 `excluded_companies`，并写明 `excluded_reason`，不得进入任何排名。
 
 `metrics` 中的每个数值对象应带 `value`、`unit`、`period_end` 或 `as_of_date`、`source_id`，派生数据另带 `formula`。不要只保存脱离日期和单位的裸数字。
 

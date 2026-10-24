@@ -3,6 +3,11 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = {
+    "a-share-industry-research-workflow": [
+        "references/workflow-contract.md",
+        "references/output-layout.md",
+        "scripts/validate_workflow.py",
+    ],
     "a-share-industry-screening": [
         "references/source-policy.md",
         "references/screening-framework.md",

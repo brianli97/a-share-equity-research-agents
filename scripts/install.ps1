@@ -5,7 +5,7 @@ param(
     [string]$Agent,
     [ValidateSet("user", "project")]
     [string]$Scope = "user",
-    [ValidateSet("all", "a-share-industry-screening", "a-share-filing-review", "a-share-peer-value-ranking")]
+    [ValidateSet("all", "a-share-industry-research-workflow", "a-share-industry-screening", "a-share-filing-review", "a-share-peer-value-ranking")]
     [string]$Skill = "all",
     [string]$ProjectPath = (Get-Location).Path,
     [switch]$Update
@@ -14,7 +14,7 @@ param(
 $ErrorActionPreference = "Stop"
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $skillNames = if ($Skill -eq "all") {
-    @("a-share-industry-screening", "a-share-filing-review", "a-share-peer-value-ranking")
+    @("a-share-industry-research-workflow", "a-share-industry-screening", "a-share-filing-review", "a-share-peer-value-ranking")
 } else { @($Skill) }
 
 function Copy-Skill([string]$SkillName, [string]$Target) {
