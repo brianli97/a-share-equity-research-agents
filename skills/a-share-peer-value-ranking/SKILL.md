@@ -33,8 +33,17 @@ description: Compare multiple A-share companies in the same industry using stand
 8. 至少展示质量优先、成长优先、估值优先三种情景。估值数据不可用时停用估值情景，不用旧价格或不同日期数据补位。
 9. 进行稳健性检查：改变权重、去除单一指标和处理极端值后，记录排名变化。高度敏感的名次不得写成确定结论。
 10. 输出综合排名之外的候选分层、每家公司的优势/反证/失效条件，以及“为什么排名靠前或靠后”。最终结论必须按顺序列出所有参评公司，并给出价值投资研究建议。
-11. 保存 `comparison/peer_data.json`、`comparison/ranking_data.json`、`comparison/report_data.json` 和 `comparison/comparison_report.md`。
-12. 默认使用 `scripts/build_comparison_report.py` 生成 `report/<行业>_同行价值比较_<YYYYMMDD>.pdf`。逐页渲染检查字体、表格、裁切、重叠、分页与来源可读性；不合格就修改通用数据或渲染器后重建。仅在 PDF 工具不可用时交付完整 Markdown，并明确说明限制。
+11. 完整行业工作流中的同行报告还要综合国家与行业主管部门最新政策、产业周期、技术路线、竞争格局和估值分布，单列“行业是否具有投资价值”章节。政策只能解释方向、约束和催化，不得直接推导公司利润或买入结论。
+12. 保存 `comparison/peer_data.json`、`comparison/ranking_data.json`、`comparison/report_data.json` 和 `comparison/comparison_report.md`。
+13. 默认使用 `scripts/build_comparison_report.py` 生成 `report/<行业>_同行价值比较_<YYYYMMDD>.pdf`。逐页渲染检查字体、表格、裁切、重叠、分页与来源可读性；不合格就修改通用数据或渲染器后重建。仅在 PDF 工具不可用时交付完整 Markdown，并明确说明限制。
+
+## 完整同行报告最低要求
+
+- 比较输入必须来自各公司完整深研中的 2–3 年趋势、经营情况和战略兑现，而不是只使用一年财务摘要。
+- 同一交易日行情可得时，至少比较股价日期、市值、PE/PB 或适用替代指标，并解释盈利口径与估值陷阱；亏损公司不使用 PE。
+- 除质量、成长和估值情景外，给出行业景气、政策、技术迭代、竞争格局和组合层面的共同风险。
+- 明确回答：行业是否值得继续配置研究、当前更适合进攻还是等待、哪些公司满足什么价格或经营条件才进入候选。
+- 最终 PDF 应是详细行业研究报告，而非几页排名摘要；通常至少 12 页，并含原始指标、趋势图、估值、政策、公司卡、情景、结论与复核来源。
 
 ## 默认候选分层
 

@@ -1,0 +1,1089 @@
+{
+  "schema_version": "1.0",
+  "topic": {
+    "name": "端侧AI SoC与推理芯片",
+    "type": "自定义产业链环节",
+    "definition": "在摄像头、智能家居、汽车、机器人、工业终端和消费设备本地完成AI推理的SoC、视觉处理器或相关处理芯片。",
+    "included_segments": [
+      "通用端侧SoC",
+      "视觉AI SoC",
+      "边缘推理芯片",
+      "带NPU的智能终端处理器"
+    ],
+    "excluded_segments": [
+      "数据中心训练芯片",
+      "AI服务器整机",
+      "算法软件",
+      "存储模组",
+      "光模块"
+    ]
+  },
+  "scope": {
+    "markets": [
+      "A股"
+    ],
+    "boards": [
+      "SSE_MAIN",
+      "SZSE_MAIN",
+      "SZSE_CHINEXT"
+    ],
+    "excluded_boards": [
+      "SSE_STAR",
+      "BSE"
+    ],
+    "security_types": [
+      "人民币普通股"
+    ],
+    "as_of_date": "2026-10-24",
+    "financial_period": "2025-12-31",
+    "top_n": 20,
+    "eligibility_rules": [
+      "已上市普通股",
+      "业务资料可核验",
+      "板块符合默认范围",
+      "非退市整理"
+    ]
+  },
+  "methodology": {
+    "mode": "composite",
+    "dimensions": [
+      "业务相关性",
+      "产品量产证据",
+      "规模与地位",
+      "成长",
+      "盈利与现金流",
+      "研发兑现",
+      "风险"
+    ],
+    "normalization": "小样本采用证据分层和相对强中弱，不制造伪精确分数。",
+    "missing_data": "不填零；降低证据等级和排名置信度。",
+    "scenarios": [
+      "质量优先",
+      "成长优先",
+      "业务纯度优先"
+    ]
+  },
+  "rankings": {
+    "leader": [
+      "603893",
+      "300458",
+      "300613",
+      "300223",
+      "300672"
+    ],
+    "attention": [
+      "603893",
+      "300672",
+      "300458",
+      "300474",
+      "300613"
+    ],
+    "fundamental": [
+      "603893",
+      "300458",
+      "300223",
+      "300613",
+      "300672"
+    ],
+    "composite": [
+      "603893",
+      "300458",
+      "300223",
+      "300613",
+      "300672",
+      "300474",
+      "301536",
+      "603501",
+      "603986",
+      "002049",
+      "300327",
+      "300077",
+      "300053",
+      "002180",
+      "600171",
+      "600460",
+      "300671",
+      "300661",
+      "600584",
+      "301269"
+    ]
+  },
+  "companies": [
+    {
+      "security_code": "603893",
+      "exchange": "SSE",
+      "board": "SSE_MAIN",
+      "company_name": "瑞芯微电子股份有限公司",
+      "short_name": "瑞芯微",
+      "official_industry": "集成电路设计",
+      "theme_role": "通用端侧AI SoC",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "智能应用处理器为核心产品，端侧AI为明确产品方向；未单列AI收入。",
+        "is_estimate": true,
+        "confidence": "high"
+      },
+      "metrics": {
+        "revenue": {
+          "value": 44.02,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "S1"
+        },
+        "revenue_growth": {
+          "value": 40.36,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "S1"
+        }
+      },
+      "scores": {},
+      "ranks": {
+        "composite": 1
+      },
+      "included_reason": [
+        "SoC平台和NPU生态证据强",
+        "2025年收入与扣非利润高增长",
+        "现金流为正"
+      ],
+      "risks": [
+        "消费电子周期",
+        "先进制程与供应链",
+        "AI收入未单列"
+      ],
+      "evidence_level": "A",
+      "data_gaps": [
+        "端侧AI收入占比"
+      ],
+      "deep_review_questions": [
+        "增长来自哪些应用",
+        "NPU产品量产和客户扩展",
+        "库存与现金流能否匹配增长"
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "security_code": "300458",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "珠海全志科技股份有限公司",
+      "short_name": "全志科技",
+      "official_industry": "集成电路设计",
+      "theme_role": "消费与工业端侧SoC",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "应用处理器、智能终端和AI能力直接相关，但未单列AI收入。",
+        "is_estimate": true,
+        "confidence": "high"
+      },
+      "metrics": {
+        "revenue": {
+          "value": 28.38,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "S3"
+        },
+        "revenue_growth": {
+          "value": 24.04,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "S3"
+        }
+      },
+      "scores": {},
+      "ranks": {
+        "composite": 2
+      },
+      "included_reason": [
+        "端侧SoC产品面广",
+        "2025年扣非利润接近翻倍",
+        "经营现金流改善"
+      ],
+      "risks": [
+        "消费电子价格竞争",
+        "客户与产品迭代",
+        "AI收入未单列"
+      ],
+      "evidence_level": "A",
+      "data_gaps": [
+        "AI SoC独立收入"
+      ],
+      "deep_review_questions": [
+        "增长是否来自AI新品",
+        "毛利和库存趋势",
+        "研发转化效率"
+      ],
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "security_code": "300223",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "北京君正集成电路股份有限公司",
+      "short_name": "北京君正",
+      "official_industry": "集成电路设计",
+      "theme_role": "边缘计算处理器与视觉芯片",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "计算芯片、智能视频和存储等多业务并存，端侧AI仅为其中一部分。",
+        "is_estimate": true,
+        "confidence": "medium"
+      },
+      "metrics": {
+        "revenue": {
+          "value": 47.41,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "S5"
+        },
+        "revenue_growth": {
+          "value": 12.54,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "S5"
+        }
+      },
+      "scores": {},
+      "ranks": {
+        "composite": 3
+      },
+      "included_reason": [
+        "规模最大",
+        "处理器与视觉技术积累",
+        "现金流改善"
+      ],
+      "risks": [
+        "存储业务稀释可比性",
+        "ROE较低",
+        "端侧AI收入无法拆分"
+      ],
+      "evidence_level": "A",
+      "data_gaps": [
+        "计算芯片中AI收入"
+      ],
+      "deep_review_questions": [
+        "计算与视频业务贡献",
+        "存储周期影响",
+        "资本回报改善路径"
+      ],
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "security_code": "300613",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "上海富瀚微电子股份有限公司",
+      "short_name": "富瀚微",
+      "official_industry": "集成电路设计",
+      "theme_role": "视觉AI SoC与车载视频芯片",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "视觉芯片与AI ISP、智能物联和车载视觉直接相关。",
+        "is_estimate": true,
+        "confidence": "high"
+      },
+      "metrics": {
+        "revenue": {
+          "value": 16.9,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "S7"
+        },
+        "revenue_growth": {
+          "value": -5.62,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "S7"
+        }
+      },
+      "scores": {},
+      "ranks": {
+        "composite": 4
+      },
+      "included_reason": [
+        "视觉AI业务纯度高",
+        "现金流强于利润",
+        "车载与智能物联场景"
+      ],
+      "risks": [
+        "2025年收入利润下降",
+        "客户与安防周期",
+        "商誉与产品竞争"
+      ],
+      "evidence_level": "A",
+      "data_gaps": [
+        "AI ISP收入占比"
+      ],
+      "deep_review_questions": [
+        "利润下滑原因",
+        "现金流改善可持续性",
+        "车载产品量产进度"
+      ],
+      "source_ids": [
+        "S7",
+        "S8"
+      ]
+    },
+    {
+      "security_code": "300672",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "湖南国科微电子股份有限公司",
+      "short_name": "国科微",
+      "official_industry": "集成电路设计",
+      "theme_role": "视觉AI SoC与规划中的大模型端侧芯片",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "智慧视觉产品量产；8/16 TOPS及更高算力AI SoC包含规划与导入阶段。",
+        "is_estimate": true,
+        "confidence": "medium"
+      },
+      "metrics": {
+        "revenue": {
+          "value": 17.91,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "S9"
+        },
+        "revenue_growth": {
+          "value": -9.44,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "S9"
+        }
+      },
+      "scores": {},
+      "ranks": {
+        "composite": 5
+      },
+      "included_reason": [
+        "ALL IN AI战略和产品路线清晰",
+        "视觉SoC已有业务基础"
+      ],
+      "risks": [
+        "2025年亏损",
+        "新品商业化未验证",
+        "资产减值与现金投入"
+      ],
+      "evidence_level": "B",
+      "data_gaps": [
+        "AI SoC量产收入",
+        "新品客户和毛利"
+      ],
+      "deep_review_questions": [
+        "亏损成因",
+        "AI产品从规划到量产的里程碑",
+        "减值与库存风险"
+      ],
+      "source_ids": [
+        "S9",
+        "S10"
+      ]
+    },
+    {
+      "security_code": "300474",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "长沙景嘉微电子股份有限公司",
+      "short_name": "景嘉微",
+      "official_industry": "集成电路设计",
+      "theme_role": "图形与计算芯片",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "GPU具备推理潜力，但业务场景与通用端侧SoC不完全同组。",
+        "is_estimate": true,
+        "confidence": "medium"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 6
+      },
+      "included_reason": [
+        "计算芯片稀缺性"
+      ],
+      "risks": [
+        "亏损和现金流压力",
+        "军品/专用市场可比性低"
+      ],
+      "evidence_level": "B",
+      "data_gaps": [
+        "AI推理收入"
+      ],
+      "deep_review_questions": [
+        "商用量产",
+        "现金流"
+      ],
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "security_code": "301536",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "星宸科技股份有限公司",
+      "short_name": "星宸科技",
+      "official_industry": "集成电路设计",
+      "theme_role": "视觉AI SoC",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "视觉SoC直接相关。",
+        "is_estimate": true,
+        "confidence": "high"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 7
+      },
+      "included_reason": [
+        "视觉SoC业务纯度较高"
+      ],
+      "risks": [
+        "上市历史较短",
+        "周期和客户集中"
+      ],
+      "evidence_level": "B",
+      "data_gaps": [
+        "统一财务提取"
+      ],
+      "deep_review_questions": [
+        "客户集中与NPU量产"
+      ],
+      "source_ids": []
+    },
+    {
+      "security_code": "603501",
+      "exchange": "SSE",
+      "board": "SSE_MAIN",
+      "company_name": "豪威集成电路（集团）股份有限公司",
+      "short_name": "豪威集团",
+      "official_industry": "集成电路设计",
+      "theme_role": "视觉传感与边缘成像",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "CIS是视觉AI输入端，非核心推理SoC。",
+        "is_estimate": true,
+        "confidence": "medium"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 8
+      },
+      "included_reason": [
+        "视觉链规模与地位"
+      ],
+      "risks": [
+        "属于传感器而非推理芯片"
+      ],
+      "evidence_level": "B",
+      "data_gaps": [
+        "AI推理芯片收入"
+      ],
+      "deep_review_questions": [
+        "SoC业务边界"
+      ],
+      "source_ids": []
+    },
+    {
+      "security_code": "603986",
+      "exchange": "SSE",
+      "board": "SSE_MAIN",
+      "company_name": "兆易创新科技集团股份有限公司",
+      "short_name": "兆易创新",
+      "official_industry": "集成电路设计",
+      "theme_role": "MCU与存储的端侧支撑",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "MCU/存储支撑智能终端，但不是典型AI SoC。",
+        "is_estimate": true,
+        "confidence": "medium"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 9
+      },
+      "included_reason": [
+        "端侧控制与存储基础"
+      ],
+      "risks": [
+        "主题纯度较低"
+      ],
+      "evidence_level": "B",
+      "data_gaps": [
+        "AI相关收入"
+      ],
+      "deep_review_questions": [
+        "AI MCU产品"
+      ],
+      "source_ids": []
+    },
+    {
+      "security_code": "002049",
+      "exchange": "SZSE",
+      "board": "SZSE_MAIN",
+      "company_name": "紫光国芯微电子股份有限公司",
+      "short_name": "紫光国微",
+      "official_industry": "集成电路设计",
+      "theme_role": "FPGA与特种处理芯片",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "可编程逻辑具备边缘推理应用，但场景与商业模式特殊。",
+        "is_estimate": true,
+        "confidence": "medium"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 10
+      },
+      "included_reason": [
+        "可编程计算能力"
+      ],
+      "risks": [
+        "特种业务可比性低"
+      ],
+      "evidence_level": "B",
+      "data_gaps": [
+        "民用AI收入"
+      ],
+      "deep_review_questions": [
+        "民用量产"
+      ],
+      "source_ids": []
+    },
+    {
+      "security_code": "300327",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "中颖电子股份有限公司",
+      "short_name": "中颖电子",
+      "official_industry": "集成电路设计",
+      "theme_role": "MCU与显示控制",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "端侧控制芯片相邻业务，AI加速证据不足。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 11
+      },
+      "included_reason": [
+        "端侧控制芯片"
+      ],
+      "risks": [
+        "AI相关性弱"
+      ],
+      "evidence_level": "C",
+      "data_gaps": [
+        "NPU与AI收入"
+      ],
+      "deep_review_questions": [
+        "AI功能证据"
+      ],
+      "source_ids": []
+    },
+    {
+      "security_code": "300077",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "国民技术股份有限公司",
+      "short_name": "国民技术",
+      "official_industry": "集成电路设计",
+      "theme_role": "安全与通用MCU",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "智能终端控制相邻，非核心AI SoC。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 12
+      },
+      "included_reason": [
+        "端侧MCU"
+      ],
+      "risks": [
+        "主题纯度和财务质量"
+      ],
+      "evidence_level": "C",
+      "data_gaps": [
+        "AI推理产品"
+      ],
+      "deep_review_questions": [
+        "AI产品量产"
+      ],
+      "source_ids": []
+    },
+    {
+      "security_code": "300053",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "航宇微",
+      "short_name": "航宇微",
+      "official_industry": "半导体产业链",
+      "theme_role": "专用SoC与AI芯片探索",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "扩展产业链观察样本，非严格端侧AI SoC同行。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 13
+      },
+      "included_reason": [
+        "专用SoC与AI芯片探索",
+        "用于理解产业链边界或潜在外溢受益"
+      ],
+      "risks": [
+        "专用场景、业绩波动，非通用消费SoC"
+      ],
+      "evidence_level": "B",
+      "data_gaps": [
+        "AI相关收入与量产证据"
+      ],
+      "deep_review_questions": [
+        "是否存在可核验的AI芯片收入",
+        "资本回报能否覆盖研发投入"
+      ],
+      "source_ids": [],
+      "peer_tier": "C-生态观察"
+    },
+    {
+      "security_code": "002180",
+      "exchange": "SZSE",
+      "board": "SZSE_MAIN",
+      "company_name": "纳思达",
+      "short_name": "纳思达",
+      "official_industry": "半导体产业链",
+      "theme_role": "打印机SoC/MCU及安全芯片",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "扩展产业链观察样本，非严格端侧AI SoC同行。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 14
+      },
+      "included_reason": [
+        "打印机SoC/MCU及安全芯片",
+        "用于理解产业链边界或潜在外溢受益"
+      ],
+      "risks": [
+        "业务复杂，打印耗材与芯片混合"
+      ],
+      "evidence_level": "B",
+      "data_gaps": [
+        "AI相关收入与量产证据"
+      ],
+      "deep_review_questions": [
+        "是否存在可核验的AI芯片收入",
+        "资本回报能否覆盖研发投入"
+      ],
+      "source_ids": [],
+      "peer_tier": "C-生态观察"
+    },
+    {
+      "security_code": "600171",
+      "exchange": "SSE",
+      "board": "SSE_MAIN",
+      "company_name": "上海贝岭",
+      "short_name": "上海贝岭",
+      "official_industry": "半导体产业链",
+      "theme_role": "ADC、MCU与电源管理",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "扩展产业链观察样本，非严格端侧AI SoC同行。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 15
+      },
+      "included_reason": [
+        "ADC、MCU与电源管理",
+        "用于理解产业链边界或潜在外溢受益"
+      ],
+      "risks": [
+        "仅为端侧芯片生态，AI推理纯度低"
+      ],
+      "evidence_level": "C",
+      "data_gaps": [
+        "AI相关收入与量产证据"
+      ],
+      "deep_review_questions": [
+        "是否存在可核验的AI芯片收入",
+        "资本回报能否覆盖研发投入"
+      ],
+      "source_ids": [],
+      "peer_tier": "C-生态观察"
+    },
+    {
+      "security_code": "600460",
+      "exchange": "SSE",
+      "board": "SSE_MAIN",
+      "company_name": "士兰微",
+      "short_name": "士兰微",
+      "official_industry": "半导体产业链",
+      "theme_role": "IDM、MCU与功率器件",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "扩展产业链观察样本，非严格端侧AI SoC同行。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 16
+      },
+      "included_reason": [
+        "IDM、MCU与功率器件",
+        "用于理解产业链边界或潜在外溢受益"
+      ],
+      "risks": [
+        "制造与功率业务占比高，非AI SoC"
+      ],
+      "evidence_level": "C",
+      "data_gaps": [
+        "AI相关收入与量产证据"
+      ],
+      "deep_review_questions": [
+        "是否存在可核验的AI芯片收入",
+        "资本回报能否覆盖研发投入"
+      ],
+      "source_ids": [],
+      "peer_tier": "C-生态观察"
+    },
+    {
+      "security_code": "300671",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "富满微",
+      "short_name": "富满微",
+      "official_industry": "半导体产业链",
+      "theme_role": "端侧控制与电源芯片",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "扩展产业链观察样本，非严格端侧AI SoC同行。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 17
+      },
+      "included_reason": [
+        "端侧控制与电源芯片",
+        "用于理解产业链边界或潜在外溢受益"
+      ],
+      "risks": [
+        "规模、盈利与主题纯度风险"
+      ],
+      "evidence_level": "C",
+      "data_gaps": [
+        "AI相关收入与量产证据"
+      ],
+      "deep_review_questions": [
+        "是否存在可核验的AI芯片收入",
+        "资本回报能否覆盖研发投入"
+      ],
+      "source_ids": [],
+      "peer_tier": "C-生态观察"
+    },
+    {
+      "security_code": "300661",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "圣邦股份",
+      "short_name": "圣邦股份",
+      "official_industry": "半导体产业链",
+      "theme_role": "高性能模拟芯片",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "扩展产业链观察样本，非严格端侧AI SoC同行。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 18
+      },
+      "included_reason": [
+        "高性能模拟芯片",
+        "用于理解产业链边界或潜在外溢受益"
+      ],
+      "risks": [
+        "是端侧供电/信号链，不是推理芯片"
+      ],
+      "evidence_level": "C",
+      "data_gaps": [
+        "AI相关收入与量产证据"
+      ],
+      "deep_review_questions": [
+        "是否存在可核验的AI芯片收入",
+        "资本回报能否覆盖研发投入"
+      ],
+      "source_ids": [],
+      "peer_tier": "C-生态观察"
+    },
+    {
+      "security_code": "600584",
+      "exchange": "SSE",
+      "board": "SSE_MAIN",
+      "company_name": "长电科技",
+      "short_name": "长电科技",
+      "official_industry": "半导体产业链",
+      "theme_role": "先进封装与测试",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "扩展产业链观察样本，非严格端侧AI SoC同行。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 19
+      },
+      "included_reason": [
+        "先进封装与测试",
+        "用于理解产业链边界或潜在外溢受益"
+      ],
+      "risks": [
+        "产业链支撑环节，不是芯片设计同行"
+      ],
+      "evidence_level": "C",
+      "data_gaps": [
+        "AI相关收入与量产证据"
+      ],
+      "deep_review_questions": [
+        "是否存在可核验的AI芯片收入",
+        "资本回报能否覆盖研发投入"
+      ],
+      "source_ids": [],
+      "peer_tier": "C-生态观察"
+    },
+    {
+      "security_code": "301269",
+      "exchange": "SZSE",
+      "board": "SZSE_CHINEXT",
+      "company_name": "华大九天",
+      "short_name": "华大九天",
+      "official_industry": "半导体产业链",
+      "theme_role": "EDA工具",
+      "business_exposure": {
+        "value": null,
+        "range": null,
+        "basis": "扩展产业链观察样本，非严格端侧AI SoC同行。",
+        "is_estimate": true,
+        "confidence": "low"
+      },
+      "metrics": {},
+      "scores": {},
+      "ranks": {
+        "composite": 20
+      },
+      "included_reason": [
+        "EDA工具",
+        "用于理解产业链边界或潜在外溢受益"
+      ],
+      "risks": [
+        "上游工具链，不是端侧AI芯片同行"
+      ],
+      "evidence_level": "C",
+      "data_gaps": [
+        "AI相关收入与量产证据"
+      ],
+      "deep_review_questions": [
+        "是否存在可核验的AI芯片收入",
+        "资本回报能否覆盖研发投入"
+      ],
+      "source_ids": [],
+      "peer_tier": "C-生态观察"
+    }
+  ],
+  "excluded_companies": [
+    {
+      "security_code": "688099",
+      "short_name": "晶晨股份",
+      "excluded_reason": "科创板，不在默认证券范围。"
+    },
+    {
+      "security_code": "688049",
+      "short_name": "炬芯科技",
+      "excluded_reason": "科创板。"
+    },
+    {
+      "security_code": "688608",
+      "short_name": "恒玄科技",
+      "excluded_reason": "科创板。"
+    },
+    {
+      "security_code": "688018",
+      "short_name": "乐鑫科技",
+      "excluded_reason": "科创板。"
+    },
+    {
+      "security_code": "688107",
+      "short_name": "安路科技",
+      "excluded_reason": "科创板。"
+    },
+    {
+      "security_code": "688521",
+      "short_name": "芯原股份",
+      "excluded_reason": "科创板。"
+    },
+    {
+      "security_code": "688256",
+      "short_name": "寒武纪",
+      "excluded_reason": "科创板且偏数据中心计算。"
+    },
+    {
+      "security_code": "688041",
+      "short_name": "海光信息",
+      "excluded_reason": "科创板且偏服务器CPU/DCU。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "瑞芯微2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-15/1225103780.PDF",
+      "level": 1,
+      "published_at": "2026-04-15",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S2",
+      "title": "瑞芯微2026年半年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-18/1225478618.PDF",
+      "level": 1,
+      "published_at": "2026-08-18",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S3",
+      "title": "全志科技2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225035756.PDF",
+      "level": 1,
+      "published_at": "2026-03-27",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S4",
+      "title": "全志科技2026年半年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225504259.PDF",
+      "level": 1,
+      "published_at": "2026-08-26",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S5",
+      "title": "北京君正2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045085.PDF",
+      "level": 1,
+      "published_at": "2026-03-28",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S6",
+      "title": "北京君正2026年半年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524759.PDF",
+      "level": 1,
+      "published_at": "2026-08-29",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S7",
+      "title": "富瀚微2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-03/1225077663.PDF",
+      "level": 1,
+      "published_at": "2026-04-03",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S8",
+      "title": "富瀚微2026年半年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225516041.PDF",
+      "level": 1,
+      "published_at": "2026-08-28",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S9",
+      "title": "国科微2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225245415.PDF",
+      "level": 1,
+      "published_at": "2026-04-29",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S10",
+      "title": "国科微2026年半年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530209.PDF",
+      "level": 1,
+      "published_at": "2026-08-29",
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "S11",
+      "title": "景嘉微2026年半年度报告摘要",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484965.PDF",
+      "level": 1,
+      "published_at": "2026-08-21",
+      "retrieved_at": "2026-10-24"
+    }
+  ],
+  "limitations": [
+    "候选地图扩展至20家；前7家为核心/较高相关，8—12为相邻处理与控制芯片，13—20仅作生态观察，不与核心SoC公司强行同组估值。",
+    "默认范围排除科创板和北交所，因此晶晨股份、恒玄科技、炬芯科技、乐鑫科技等重要公司未纳入可投资池。",
+    "Top 5深研按业务证据与2025年基本面选择；主题相关性不等于AI收入占比。"
+  ]
+}

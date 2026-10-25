@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-24T13:41:33.529602+00:00",
+  "input": "peer_data.json",
+  "topic": "端侧AI SoC与推理芯片",
+  "financial_period": "2025-12-31",
+  "price_date": null,
+  "scenarios": {
+    "quality_first": {
+      "enabled": true,
+      "weights": {
+        "business_quality": 25.0,
+        "growth_quality": 12.0,
+        "profitability": 18.0,
+        "cash_quality": 18.0,
+        "balance_sheet": 12.0,
+        "capital_governance": 15.0,
+        "valuation": 0.0
+      },
+      "ranking": [
+        {
+          "security_code": "603893",
+          "short_name": "瑞芯微",
+          "score": 91.34,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.94,
+          "confidence": 0.94,
+          "rank": 1,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "300458",
+          "short_name": "全志科技",
+          "score": 83.94,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.91,
+          "confidence": 0.91,
+          "rank": 2,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "300223",
+          "short_name": "北京君正",
+          "score": 76.26,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.9,
+          "confidence": 0.9,
+          "rank": 3,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "300613",
+          "short_name": "富瀚微",
+          "score": 74.14,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.92,
+          "confidence": 0.92,
+          "rank": 4,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "300672",
+          "short_name": "国科微",
+          "score": 49.24,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.82,
+          "confidence": 0.82,
+          "rank": 5,
+          "rank_status": "ranked"
+        }
+      ]
+    },
+    "growth_first": {
+      "enabled": true,
+      "weights": {
+        "business_quality": 18.0,
+        "growth_quality": 27.0,
+        "profitability": 15.0,
+        "cash_quality": 12.0,
+        "balance_sheet": 8.0,
+        "capital_governance": 10.0,
+        "valuation": 0.0
+      },
+      "ranking": [
+        {
+          "security_code": "603893",
+          "short_name": "瑞芯微",
+          "score": 92.03,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.94,
+          "confidence": 0.94,
+          "rank": 1,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "300458",
+          "short_name": "全志科技",
+          "score": 84.73,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.91,
+          "confidence": 0.91,
+          "rank": 2,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "300223",
+          "short_name": "北京君正",
+          "score": 73.64,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.9,
+          "confidence": 0.9,
+          "rank": 3,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "300613",
+          "short_name": "富瀚微",
+          "score": 68.62,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.92,
+          "confidence": 0.92,
+          "rank": 4,
+          "rank_status": "ranked"
+        },
+        {
+          "security_code": "300672",
+          "short_name": "国科微",
+          "score": 46.11,
+          "coverage_ratio": 1.0,
+          "evidence_quality": 0.82,
+          "confidence": 0.82,
+          "rank": 5,
+          "rank_status": "ranked"
+        }
+      ]
+    },
+    "valuation_first": {
+      "enabled": false,
+      "reason": "A common price_date and valuation score for every company are required.",
+      "weights": {
+        "business_quality": 20.0,
+        "growth_quality": 10.0,
+        "profitability": 15.0,
+        "cash_quality": 15.0,
+        "balance_sheet": 10.0,
+        "capital_governance": 10.0,
+        "valuation": 20.0
+      },
+      "ranking": []
+    }
+  }
+}

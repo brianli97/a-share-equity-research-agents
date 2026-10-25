@@ -1,0 +1,17 @@
+{
+  "schema_version":"1.0","topic":"端侧AI SoC与推理芯片","as_of_date":"2026-10-24",
+  "parameters":{"allowed_boards":["SSE_MAIN","SZSE_MAIN","SZSE_CHINEXT"],"excluded_boards":["SSE_STAR","BSE"],"screening_mode":"composite","screening_top_n":20,"filing_review_top_n":5,"ranking_min_companies":3},
+  "stages":{
+    "scope_definition":{"status":"completed","required":false,"reused_from":"../AI半导体_20261024/scope/industry_scope.json"},
+    "screening":{"status":"completed","universe_path":"screening/universe.json","report_path":"screening/screening_report.md"},
+    "filing_reviews":{"status":"completed","selected_companies":[
+      {"security_code":"603893","company_name":"瑞芯微电子股份有限公司","status":"completed","report_data_path":"companies/603893_瑞芯微/extracted/report_data.json","report_path":"companies/603893_瑞芯微/report/603893_瑞芯微_招股书与财报解读_20261024.pdf","error":null},
+      {"security_code":"300458","company_name":"珠海全志科技股份有限公司","status":"completed","report_data_path":"companies/300458_全志科技/extracted/report_data.json","report_path":"companies/300458_全志科技/report/300458_全志科技_招股书与财报解读_20261024.pdf","error":null},
+      {"security_code":"300223","company_name":"北京君正集成电路股份有限公司","status":"completed","report_data_path":"companies/300223_北京君正/extracted/report_data.json","report_path":"companies/300223_北京君正/report/300223_北京君正_招股书与财报解读_20261024.pdf","error":null},
+      {"security_code":"300613","company_name":"上海富瀚微电子股份有限公司","status":"completed","report_data_path":"companies/300613_富瀚微/extracted/report_data.json","report_path":"companies/300613_富瀚微/report/300613_富瀚微_招股书与财报解读_20261024.pdf","error":null},
+      {"security_code":"300672","company_name":"湖南国科微电子股份有限公司","status":"completed","report_data_path":"companies/300672_国科微/extracted/report_data.json","report_path":"companies/300672_国科微/report/300672_国科微_招股书与财报解读_20261024.pdf","error":null}
+    ]},
+    "peer_ranking":{"status":"completed","peer_data_path":"peer-ranking/comparison/peer_data.json","ranking_data_path":"peer-ranking/comparison/ranking_data.json","report_data_path":"peer-ranking/comparison/report_data.json","markdown_path":"peer-ranking/comparison/comparison_report.md","report_path":"peer-ranking/report/端侧AI_SoC与推理芯片_同行价值比较_20261024.pdf"}
+  },
+  "limitations":["共同财务基期为经审计的2025年度；2026年半年报只用于趋势复核。","未取得同一交易日的可靠价格与估值数据，关闭估值与安全边际排名。","多家公司未单列端侧AI收入，主题暴露多为产品与应用证据，不能视为已披露收入占比。","前五家公司产品场景仍有差异，排名是基本面研究优先级，不是无条件买入建议。"]
+}

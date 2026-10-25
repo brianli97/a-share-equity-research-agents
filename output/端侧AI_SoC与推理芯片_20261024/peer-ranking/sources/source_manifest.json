@@ -1,0 +1,43 @@
+{
+  "as_of_date": "2026-10-24",
+  "financial_period": "2025-12-31",
+  "latest_trend_period": "2026-06-30",
+  "price_date": "2026-10-23",
+  "source_directories": [
+    "../../companies/603893_瑞芯微/source",
+    "../../companies/300458_全志科技/source",
+    "../../companies/300223_北京君正/source",
+    "../../companies/300613_富瀚微/source",
+    "../../companies/300672_国科微/source"
+  ],
+  "external_sources": [
+    {
+      "id": "MKT-TENCENT",
+      "title": "腾讯证券公开行情接口（同日收盘快照）",
+      "url": "https://qt.gtimg.cn/",
+      "level": 3,
+      "retrieved_at": "2026-10-24"
+    },
+    {
+      "id": "POLICY-AI-PLUS",
+      "title": "国务院关于深入实施“人工智能+”行动的意见",
+      "url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+      "level": 1,
+      "published_at": "2025-08-26"
+    },
+    {
+      "id": "POLICY-ELECTRONICS",
+      "title": "电子信息制造业2025—2026年稳增长行动方案",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202509/P020250904785908466147.pdf",
+      "level": 1,
+      "published_at": "2025-09-04"
+    },
+    {
+      "id": "POLICY-AI-MFG",
+      "title": "“人工智能+制造”专项行动实施意见",
+      "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/202512/8b6a31547603437db54d6596d33d04c4.pdf",
+      "level": 1,
+      "published_at": "2026-01-08"
+    }
+  ]
+}

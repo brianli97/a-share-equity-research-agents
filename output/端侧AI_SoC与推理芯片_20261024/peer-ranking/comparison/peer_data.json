@@ -1,0 +1,522 @@
+{
+  "schema_version": "1.0",
+  "topic": "端侧AI SoC与推理芯片",
+  "output_type": "peer_value_ranking",
+  "as_of_date": "2026-10-24",
+  "financial_period": "2025-12-31",
+  "price_date": "2026-10-23",
+  "companies": [
+    {
+      "security_code": "603893",
+      "company_name": "瑞芯微电子股份有限公司",
+      "short_name": "瑞芯微",
+      "industry_role": "通用端侧AI SoC",
+      "comparability": "high",
+      "evidence_quality": 0.94,
+      "dimension_scores": {
+        "business_quality": 92,
+        "growth_quality": 94,
+        "profitability": 95,
+        "cash_quality": 90,
+        "balance_sheet": 88,
+        "capital_governance": 88,
+        "valuation": null
+      },
+      "metrics": {
+        "revenue": {
+          "value": 44.02,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "R-AR25",
+          "direction": "higher"
+        },
+        "revenue_growth": {
+          "value": 40.36,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "R-AR25",
+          "direction": "higher"
+        },
+        "net_profit": {
+          "value": 10.4,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "R-AR25",
+          "direction": "higher"
+        },
+        "operating_cashflow": {
+          "value": 10.69,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "R-AR25",
+          "direction": "higher"
+        },
+        "roe": {
+          "value": 25.79,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "R-AR25",
+          "direction": "higher"
+        },
+        "price": {
+          "value": 214.04,
+          "unit": "元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "market_cap": {
+          "value": 906.24,
+          "unit": "亿元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "pe_dynamic": {
+          "value": 66.25,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        },
+        "pb": {
+          "value": 18.28,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        }
+      },
+      "qualitative_scores": {
+        "moat": {
+          "value": 90,
+          "basis": "SoC、NPU、软件和多场景平台形成生态；反证是AI收入未单列。",
+          "source_ids": [
+            "R-AR25"
+          ]
+        }
+      },
+      "risks": [
+        "消费电子周期",
+        "先进制程供应",
+        "备货导致现金流波动"
+      ],
+      "thesis_breakers": [
+        "新品收入停滞且毛利率、现金流持续恶化"
+      ],
+      "data_gaps": [
+        "AI收入占比"
+      ]
+    },
+    {
+      "security_code": "300458",
+      "company_name": "珠海全志科技股份有限公司",
+      "short_name": "全志科技",
+      "industry_role": "消费与工业端侧SoC",
+      "comparability": "high",
+      "evidence_quality": 0.91,
+      "dimension_scores": {
+        "business_quality": 84,
+        "growth_quality": 88,
+        "profitability": 82,
+        "cash_quality": 85,
+        "balance_sheet": 86,
+        "capital_governance": 80,
+        "valuation": null
+      },
+      "metrics": {
+        "revenue": {
+          "value": 28.38,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "A-AR25",
+          "direction": "higher"
+        },
+        "revenue_growth": {
+          "value": 24.04,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "A-AR25",
+          "direction": "higher"
+        },
+        "net_profit": {
+          "value": 2.62,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "A-AR25",
+          "direction": "higher"
+        },
+        "operating_cashflow": {
+          "value": 2.84,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "A-AR25",
+          "direction": "higher"
+        },
+        "roe": {
+          "value": 8.65,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "A-AR25",
+          "direction": "higher"
+        },
+        "price": {
+          "value": 30.08,
+          "unit": "元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "market_cap": {
+          "value": 298.89,
+          "unit": "亿元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "pe_dynamic": {
+          "value": 50.56,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        },
+        "pb": {
+          "value": 8.58,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        }
+      },
+      "qualitative_scores": {
+        "moat": {
+          "value": 82,
+          "basis": "宽产品平台和软硬件能力；反证是消费电子同质化竞争。",
+          "source_ids": [
+            "A-AR25"
+          ]
+        }
+      },
+      "risks": [
+        "终端周期",
+        "价格竞争",
+        "第四季度利润转负"
+      ],
+      "thesis_breakers": [
+        "季度亏损持续且新品不能维持毛利"
+      ],
+      "data_gaps": [
+        "AI SoC收入"
+      ]
+    },
+    {
+      "security_code": "300223",
+      "company_name": "北京君正集成电路股份有限公司",
+      "short_name": "北京君正",
+      "industry_role": "边缘处理器与视觉芯片",
+      "comparability": "medium",
+      "evidence_quality": 0.9,
+      "dimension_scores": {
+        "business_quality": 78,
+        "growth_quality": 66,
+        "profitability": 62,
+        "cash_quality": 88,
+        "balance_sheet": 92,
+        "capital_governance": 72,
+        "valuation": null
+      },
+      "metrics": {
+        "revenue": {
+          "value": 47.41,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "I-AR25",
+          "direction": "higher"
+        },
+        "revenue_growth": {
+          "value": 12.54,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "I-AR25",
+          "direction": "higher"
+        },
+        "net_profit": {
+          "value": 3.76,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "I-AR25",
+          "direction": "higher"
+        },
+        "operating_cashflow": {
+          "value": 6.23,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "I-AR25",
+          "direction": "higher"
+        },
+        "roe": {
+          "value": 3.06,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "I-AR25",
+          "direction": "higher"
+        },
+        "price": {
+          "value": 105.4,
+          "unit": "元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "market_cap": {
+          "value": 542.76,
+          "unit": "亿元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "pe_dynamic": {
+          "value": 39.6,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        },
+        "pb": {
+          "value": 3.99,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        }
+      },
+      "qualitative_scores": {
+        "moat": {
+          "value": 78,
+          "basis": "处理器、视频和存储技术组合；反证是多业务复杂和低ROE。",
+          "source_ids": [
+            "I-AR25"
+          ]
+        }
+      },
+      "risks": [
+        "存储周期",
+        "多业务可比性",
+        "资本回报低"
+      ],
+      "thesis_breakers": [
+        "核心利润不增且ROE长期低位"
+      ],
+      "data_gaps": [
+        "端侧AI收入",
+        "分业务利润"
+      ]
+    },
+    {
+      "security_code": "300613",
+      "company_name": "上海富瀚微电子股份有限公司",
+      "short_name": "富瀚微",
+      "industry_role": "视觉AI SoC",
+      "comparability": "high",
+      "evidence_quality": 0.92,
+      "dimension_scores": {
+        "business_quality": 82,
+        "growth_quality": 50,
+        "profitability": 58,
+        "cash_quality": 92,
+        "balance_sheet": 82,
+        "capital_governance": 72,
+        "valuation": null
+      },
+      "metrics": {
+        "revenue": {
+          "value": 16.9,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "F-AR25",
+          "direction": "higher"
+        },
+        "revenue_growth": {
+          "value": -5.62,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "F-AR25",
+          "direction": "higher"
+        },
+        "net_profit": {
+          "value": 1.45,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "F-AR25",
+          "direction": "higher"
+        },
+        "operating_cashflow": {
+          "value": 4.44,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "F-AR25",
+          "direction": "higher"
+        },
+        "roe": {
+          "value": 5.11,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "F-AR25",
+          "direction": "higher"
+        },
+        "price": {
+          "value": 69.3,
+          "unit": "元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "market_cap": {
+          "value": 161.45,
+          "unit": "亿元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "pe_dynamic": {
+          "value": 34.23,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        },
+        "pb": {
+          "value": 5.08,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        }
+      },
+      "qualitative_scores": {
+        "moat": {
+          "value": 80,
+          "basis": "视觉ISP和SoC积累；反证是安防竞争和利润下滑。",
+          "source_ids": [
+            "F-AR25"
+          ]
+        }
+      },
+      "risks": [
+        "安防周期",
+        "车载量产慢",
+        "商誉"
+      ],
+      "thesis_breakers": [
+        "收入持续下降且车载新品不放量"
+      ],
+      "data_gaps": [
+        "AI收入",
+        "现金流改善来源"
+      ]
+    },
+    {
+      "security_code": "300672",
+      "company_name": "湖南国科微电子股份有限公司",
+      "short_name": "国科微",
+      "industry_role": "视觉AI SoC与大模型端侧芯片",
+      "comparability": "medium",
+      "evidence_quality": 0.82,
+      "dimension_scores": {
+        "business_quality": 64,
+        "growth_quality": 38,
+        "profitability": 20,
+        "cash_quality": 55,
+        "balance_sheet": 64,
+        "capital_governance": 50,
+        "valuation": null
+      },
+      "metrics": {
+        "revenue": {
+          "value": 17.91,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "G-AR25",
+          "direction": "higher"
+        },
+        "revenue_growth": {
+          "value": -9.44,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "G-AR25",
+          "direction": "higher"
+        },
+        "net_profit": {
+          "value": -2.33,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "G-AR25",
+          "direction": "higher"
+        },
+        "operating_cashflow": {
+          "value": 1.27,
+          "unit": "亿元",
+          "period_end": "2025-12-31",
+          "source_id": "G-AR25",
+          "direction": "higher"
+        },
+        "roe": {
+          "value": -5.91,
+          "unit": "%",
+          "period_end": "2025-12-31",
+          "source_id": "G-AR25",
+          "direction": "higher"
+        },
+        "price": {
+          "value": 139.3,
+          "unit": "元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "market_cap": {
+          "value": 302.42,
+          "unit": "亿元",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "context"
+        },
+        "pe_dynamic": {
+          "value": null,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        },
+        "pb": {
+          "value": 7.54,
+          "unit": "倍",
+          "period_end": "2026-10-23",
+          "source_id": "MKT-TENCENT",
+          "direction": "lower"
+        }
+      },
+      "qualitative_scores": {
+        "moat": {
+          "value": 58,
+          "basis": "MLPU与多档AI SoC规划；反证是量产和收入尚未验证。",
+          "source_ids": [
+            "G-AR25"
+          ]
+        }
+      },
+      "risks": [
+        "亏损",
+        "资产减值",
+        "新品商业化"
+      ],
+      "thesis_breakers": [
+        "AI SoC持续无量产收入且亏损扩大"
+      ],
+      "data_gaps": [
+        "AI产品收入与客户"
+      ]
+    }
+  ]
+}
