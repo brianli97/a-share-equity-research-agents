@@ -52,6 +52,28 @@ def validate_status(item: dict, field: str) -> str:
     return status
 
 
+def count_blocks(report_data: dict, kind: str) -> int:
+    pages = report_data.get("pages", [])
+    if not isinstance(pages, list):
+        return 0
+    return sum(
+        1 for page in pages if isinstance(page, list)
+        for block in page if isinstance(block, dict) and block.get("type") == kind
+    )
+
+
+def validate_financial_history(report_data: dict, field: str) -> None:
+    history = report_data.get("financial_history")
+    if not isinstance(history, list) or len(history) < 3:
+        fail(f"{field}.financial_history must contain at least 3 annual periods")
+    required = {"period", "revenue", "net_profit", "adjusted_net_profit", "operating_cash_flow", "roe"}
+    for index, period in enumerate(history):
+        if not isinstance(period, dict) or not required.issubset(period):
+            fail(f"{field}.financial_history[{index}] must contain {sorted(required)}")
+    if count_blocks(report_data, "series_bars") < 2:
+        fail(f"{field} must contain at least 2 series_bars blocks")
+
+
 def validate(root: Path) -> None:
     manifest = load_json(root / "workflow_manifest.json")
     if manifest.get("schema_version") != "1.0":
@@ -66,6 +88,9 @@ def validate(root: Path) -> None:
     minimum = parameters.get("ranking_min_companies", 3)
     if not isinstance(minimum, int) or minimum < 3:
         fail("ranking_min_companies must be an integer of at least 3")
+    financial_history_required = parameters.get("financial_history_required", False)
+    if not isinstance(financial_history_required, bool):
+        fail("financial_history_required must be a boolean")
 
     stages = manifest.get("stages")
     if not isinstance(stages, dict) or not REQUIRED_STAGES.issubset(stages):
@@ -98,7 +123,11 @@ def validate(root: Path) -> None:
                 fail(f"{field}.{key} must be a non-empty string")
         if validate_status(company, field) == "completed":
             completed_reviews += 1
-            require_file(root, company.get("report_data_path"), f"{field}.report_data_path", json_file=True)
+            report_data_path = require_file(
+                root, company.get("report_data_path"), f"{field}.report_data_path", json_file=True
+            )
+            if financial_history_required:
+                validate_financial_history(load_json(report_data_path), f"{field}.report_data")
             require_file(root, company.get("report_path"), f"{field}.report_path")
     if review_status == "completed" and not companies:
         fail("completed filing_reviews must select at least one company")
@@ -112,7 +141,11 @@ def validate(root: Path) -> None:
             fail(f"completed peer_ranking requires at least {minimum} completed filing reviews")
         require_file(root, ranking.get("peer_data_path"), "stages.peer_ranking.peer_data_path", json_file=True)
         require_file(root, ranking.get("ranking_data_path"), "stages.peer_ranking.ranking_data_path", json_file=True)
-        require_file(root, ranking.get("report_data_path"), "stages.peer_ranking.report_data_path", json_file=True)
+        ranking_report_data_path = require_file(
+            root, ranking.get("report_data_path"), "stages.peer_ranking.report_data_path", json_file=True
+        )
+        if financial_history_required and count_blocks(load_json(ranking_report_data_path), "series_bars") < 2:
+            fail("stages.peer_ranking.report_data must contain at least 2 series_bars blocks")
         require_file(root, ranking.get("markdown_path"), "stages.peer_ranking.markdown_path")
         require_file(root, ranking.get("report_path"), "stages.peer_ranking.report_path")
 

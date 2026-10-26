@@ -182,6 +182,89 @@ class Bars(Flowable):
             y -= 12 * mm
 
 
+class SeriesBars(Flowable):
+    """Compact grouped column chart for annual or quarterly financial series."""
+
+    def __init__(self, block):
+        super().__init__()
+        self.categories = [str(value) for value in block.get("categories", [])]
+        self.series = block.get("series", [])
+        if not 2 <= len(self.categories) <= 8:
+            raise ValueError("Series bar charts require two to eight categories")
+        if not 1 <= len(self.series) <= 3:
+            raise ValueError("Series bar charts require one to three series")
+        for item in self.series:
+            if len(item.get("values", [])) != len(self.categories):
+                raise ValueError("Each series must have one value per category")
+        values = [float(value) for item in self.series for value in item["values"] if value is not None]
+        if not values:
+            raise ValueError("Series bar charts require at least one numeric value")
+        self.minimum = min(0.0, float(block.get("min_value", min(values))))
+        self.maximum = max(0.0, float(block.get("max_value", max(values))))
+        if self.maximum <= self.minimum:
+            raise ValueError("Series bar chart range must be positive")
+        self.unit = str(block.get("unit", ""))
+        self.width = 176 * mm
+        self.height = 80 * mm
+
+    def draw(self):
+        palette = [BLUE, TEAL, AMBER]
+        c = self.canv
+        left, right, bottom, top = 19 * mm, 3 * mm, 15 * mm, 14 * mm
+        plot_w = self.width - left - right
+        plot_h = self.height - bottom - top
+        value_range = self.maximum - self.minimum
+
+        c.setFont("CN", 6.5)
+        c.setFillColor(MUTED)
+        if self.unit:
+            c.drawString(0, self.height - 4 * mm, self.unit)
+        legend_x = left
+        for index, item in enumerate(self.series):
+            color = palette[index]
+            c.setFillColor(color)
+            c.rect(legend_x, self.height - 6 * mm, 3 * mm, 3 * mm, fill=1, stroke=0)
+            c.setFillColor(INK)
+            c.drawString(legend_x + 4 * mm, self.height - 5.7 * mm, str(item.get("label", f"系列{index + 1}"))[:14])
+            legend_x += 42 * mm
+
+        for tick in range(5):
+            ratio = tick / 4
+            y = bottom + ratio * plot_h
+            value = self.minimum + ratio * value_range
+            c.setStrokeColor(LINE)
+            c.setLineWidth(0.35)
+            c.line(left, y, left + plot_w, y)
+            c.setFillColor(MUTED)
+            c.drawRightString(left - 2 * mm, y - 1.5 * mm, f"{value:.1f}")
+
+        zero_y = bottom + (0 - self.minimum) / value_range * plot_h
+        group_w = plot_w / len(self.categories)
+        gap = 1.2 * mm
+        usable = min(group_w * 0.74, 24 * mm)
+        bar_w = (usable - gap * (len(self.series) - 1)) / len(self.series)
+        for category_index, category in enumerate(self.categories):
+            group_x = left + category_index * group_w + (group_w - usable) / 2
+            for series_index, item in enumerate(self.series):
+                raw = item["values"][category_index]
+                if raw is None:
+                    continue
+                value = float(raw)
+                value_y = bottom + (value - self.minimum) / value_range * plot_h
+                x = group_x + series_index * (bar_w + gap)
+                y = min(zero_y, value_y)
+                height = max(abs(value_y - zero_y), 0.6 * mm)
+                c.setFillColor(palette[series_index])
+                c.rect(x, y, bar_w, height, fill=1, stroke=0)
+                c.setFillColor(INK)
+                c.setFont("CN", 5.5)
+                label_y = value_y + (1.5 * mm if value >= 0 else -3 * mm)
+                c.drawCentredString(x + bar_w / 2, label_y, f"{value:.1f}")
+            c.setFillColor(INK)
+            c.setFont("CN", 7)
+            c.drawCentredString(left + (category_index + 0.5) * group_w, 6 * mm, category[:10])
+
+
 def render(data_path):
     data_path = Path(data_path).resolve()
     data = json.loads(data_path.read_text(encoding="utf-8"))
@@ -222,6 +305,8 @@ def render(data_path):
                 story.append(cards(block, sheets))
             elif kind == "bars":
                 story.append(Bars(block))
+            elif kind == "series_bars":
+                story.append(SeriesBars(block))
             else:
                 raise ValueError(f"Unknown block type: {kind}")
         if page_index < len(data["pages"]) - 1:

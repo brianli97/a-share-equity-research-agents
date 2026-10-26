@@ -32,5 +32,8 @@ python <skill目录>/scripts/build_report.py <输出目录>/extracted/report_dat
 - 要点列表：`{"type":"bullets","items":["要点一","要点二"]}`，建议 3–6 项。
 - 信息卡：`{"type":"cards","items":[{"title":"优势","text":"...","tone":"positive"}]}`，每组 1–3 张。
 - 横向条形图：`{"type":"bars","max_value":100,"unit":"%","items":[{"label":"收入增速","value":32.5,"display":"32.5%","tone":"positive"}]}`。`value` 必须是可复核数值，`display` 保留读者看到的单位与精度。
+- 多序列柱状图：`{"type":"series_bars","categories":["2023","2024","2025"],"unit":"亿元","series":[{"label":"归母净利润","values":[10.2,12.5,15.1]},{"label":"扣非净利润","values":[9.8,11.9,14.4]}]}`。适合年度/季度趋势和同口径公司对比；支持 2–8 个期间、1–3 个系列，缺失值写 `null`，不得补零。
+
+完整财报解读还应在顶层保存 `financial_history`，至少包含最近 3 个完整年度的 `period`、`revenue`、`net_profit`、`adjusted_net_profit`、`operating_cash_flow`、`roe` 与口径/单位说明。年度表展示同比，季度表仅在已取得真实单季数据时展示环比；不得用累计值直接计算环比。`pages` 至少包含两张 `series_bars`：收入趋势，以及利润/经营现金流/ROE 中至少一组趋势。
 
 生成前检查必填字段、非空页面、表格列数与列宽；生成后仍须按视觉规范逐页渲染检查。结构化数据承载公司事实、计算、判断和引用，通用脚本只负责排版。
