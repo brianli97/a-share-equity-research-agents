@@ -26,6 +26,7 @@ PDF 是默认最终交付物；JSON 和 Markdown 是可复核原件，不因生�
   "schema_version": "1.0",
   "generated_at": "...",
   "input": "peer_data.json",
+  "comparison_mode": "formal_ranking",
   "scenarios": {
     "quality_first": {
       "enabled": true,
@@ -37,7 +38,7 @@ PDF 是默认最终交付物；JSON 和 Markdown 是可复核原件，不因生�
 }
 ```
 
-每个排名项必须包含 `security_code`、`score`、`coverage_ratio`、`evidence_quality`、`confidence` 和 `rank`。关闭的情景给出 `enabled: false` 与 `reason`。
+正式排名的每个排名项包含 `security_code`、`score`、`coverage_ratio`、`evidence_quality`、`confidence` 和 `rank`。3–4 家方向性比较把 `score` 设为 `null`，使用 `directional_order` 与 `relative_tier`；关闭的情景给出 `enabled: false` 与 `reason`。
 
 ## 报告结构
 

@@ -65,7 +65,15 @@ def numeric_score(company: dict, dimension: str) -> float | None:
     return float(value)
 
 
-def rank_scenario(companies: list[dict], weights: dict[str, float]) -> list[dict]:
+def relative_tier(position: int, count: int) -> str:
+    if position == 1:
+        return "strong"
+    if position == count:
+        return "weak"
+    return "middle"
+
+
+def rank_scenario(companies: list[dict], weights: dict[str, float], *, formal: bool) -> list[dict]:
     total_weight = sum(weights.values())
     results = []
     for company in companies:
@@ -88,18 +96,28 @@ def rank_scenario(companies: list[dict], weights: dict[str, float]) -> list[dict
         results.append({
             "security_code": company["security_code"],
             "short_name": company.get("short_name", company.get("company_name", "")),
-            "score": round(score, 2) if score is not None else None,
+            "score": round(score, 2) if formal and score is not None else None,
+            "_calculated_score": score,
             "coverage_ratio": round(coverage, 4),
             "evidence_quality": round(float(evidence), 4),
             "confidence": round(confidence, 4),
             "rank": None,
-            "rank_status": "ranked" if coverage >= 0.70 else "insufficient_coverage",
+            "directional_order": None,
+            "relative_tier": None,
+            "rank_status": ("ranked" if formal else "directional") if coverage >= 0.70 else "insufficient_coverage",
         })
-    eligible = [r for r in results if r["rank_status"] == "ranked" and r["score"] is not None]
-    eligible.sort(key=lambda r: (r["score"], r["confidence"], r["security_code"]), reverse=True)
+    eligible = [r for r in results if r["rank_status"] != "insufficient_coverage" and r["_calculated_score"] is not None]
+    eligible.sort(key=lambda r: (r["_calculated_score"], r["confidence"], r["security_code"]), reverse=True)
     for index, item in enumerate(eligible, start=1):
-        item["rank"] = index
-    return sorted(results, key=lambda r: (r["rank"] is None, r["rank"] or 10**9, r["security_code"]))
+        if formal:
+            item["rank"] = index
+        else:
+            item["directional_order"] = index
+            item["relative_tier"] = relative_tier(index, len(eligible))
+    for item in results:
+        item.pop("_calculated_score", None)
+    order_key = "rank" if formal else "directional_order"
+    return sorted(results, key=lambda r: (r[order_key] is None, r[order_key] or 10**9, r["security_code"]))
 
 
 def main() -> int:
@@ -109,6 +127,11 @@ def main() -> int:
     input_path = Path(sys.argv[1]).resolve()
     output_path = Path(sys.argv[2]).resolve() if len(sys.argv) == 3 else input_path.with_name("ranking_data.json")
     data = load_input(input_path)
+    formal = len(data["companies"]) >= 5
+    comparison_mode = "formal_ranking" if formal else "directional_comparison"
+    requested_mode = data.get("comparison_mode")
+    if requested_mode == "formal_ranking" and not formal:
+        raise ValueError("formal_ranking requires at least five companies")
     scenarios = data.get("scenarios") or DEFAULT_SCENARIOS
     if not isinstance(scenarios, dict) or not scenarios:
         raise ValueError("scenarios must be a non-empty object")
@@ -134,13 +157,14 @@ def main() -> int:
         output_scenarios[name] = {
             "enabled": True,
             "weights": effective,
-            "ranking": rank_scenario(data["companies"], effective),
+            "ranking": rank_scenario(data["companies"], effective, formal=formal),
         }
 
     result = {
         "schema_version": "1.0",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "input": input_path.name,
+        "comparison_mode": comparison_mode,
         "topic": data.get("topic"),
         "financial_period": data.get("financial_period"),
         "price_date": data.get("price_date"),

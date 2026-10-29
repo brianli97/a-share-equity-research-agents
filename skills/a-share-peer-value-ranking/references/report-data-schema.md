@@ -34,7 +34,7 @@ python <skill目录>/scripts/build_comparison_report.py <输出目录>/compariso
 - 横向条形图：`{"type":"bars","max_value":100,"unit":"分","items":[{"label":"公司A","value":88.2,"display":"88.2","tone":"positive"}]}`，用于分项分、增速和排名差异；必须同时显示数值。
 - 多序列柱状图：`{"type":"series_bars","categories":["公司A","公司B"],"unit":"亿元","series":[{"label":"扣非净利润","values":[12.5,8.4]},{"label":"经营现金流","values":[15.1,7.9]}]}`。适合同期横向对比或 3–5 年趋势；支持 2–8 个类别、1–3 个系列，缺失值写 `null`，不得补零。
 
-完整同行报告至少包含两张数据图：一张同期间公司规模/盈利对比，一张现金流、ROE 或多年增长对比。输入公司的 `financial_history` 少于 3 个完整年度时必须显式披露，不得以单年快照冒充趋势。
+完整同行报告至少包含两张数据图：一张同期间公司规模/盈利对比，一张现金流、ROE 或多年增长对比。输入公司的 `financial_history` 未达到各自 `history_policy.required_years` 时必须显式披露并降低置信度，不得以较短窗口冒充完整趋势。
 
 ## 必需页面
 

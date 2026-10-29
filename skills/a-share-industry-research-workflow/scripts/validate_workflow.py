@@ -62,10 +62,19 @@ def count_blocks(report_data: dict, kind: str) -> int:
     )
 
 
-def validate_financial_history(report_data: dict, field: str) -> None:
+def validate_financial_history(report_data: dict, field: str, default_years: int) -> None:
+    policy = report_data.get("history_policy", {})
+    if policy is not None and not isinstance(policy, dict):
+        fail(f"{field}.history_policy must be an object")
+    policy = policy or {}
+    required_years = policy.get("required_years", default_years)
+    if not isinstance(required_years, int) or isinstance(required_years, bool) or required_years < 3:
+        fail(f"{field}.history_policy.required_years must be an integer of at least 3")
+    if policy.get("industry_cycle_type") == "cyclical" and required_years < 5:
+        fail(f"{field}.history_policy.required_years must be at least 5 for cyclical industries")
     history = report_data.get("financial_history")
-    if not isinstance(history, list) or len(history) < 3:
-        fail(f"{field}.financial_history must contain at least 3 annual periods")
+    if not isinstance(history, list) or len(history) < required_years:
+        fail(f"{field}.financial_history must contain at least {required_years} annual periods")
     required = {"period", "revenue", "net_profit", "adjusted_net_profit", "operating_cash_flow", "roe"}
     for index, period in enumerate(history):
         if not isinstance(period, dict) or not required.issubset(period):
@@ -85,9 +94,18 @@ def validate(root: Path) -> None:
     parameters = manifest.get("parameters")
     if not isinstance(parameters, dict):
         fail("parameters must be an object")
-    minimum = parameters.get("ranking_min_companies", 3)
-    if not isinstance(minimum, int) or minimum < 3:
-        fail("ranking_min_companies must be an integer of at least 3")
+    directional_minimum = parameters.get("directional_min_companies", 3)
+    if not isinstance(directional_minimum, int) or isinstance(directional_minimum, bool) or directional_minimum != 3:
+        fail("directional_min_companies must be 3")
+    minimum = parameters.get("ranking_min_companies", 5)
+    if not isinstance(minimum, int) or isinstance(minimum, bool) or minimum < 5:
+        fail("ranking_min_companies must be an integer of at least 5")
+    history_policy = parameters.get("history_policy", {})
+    if not isinstance(history_policy, dict):
+        fail("history_policy must be an object")
+    default_history_years = history_policy.get("default_years", 3)
+    if not isinstance(default_history_years, int) or isinstance(default_history_years, bool) or default_history_years < 3:
+        fail("history_policy.default_years must be an integer of at least 3")
     financial_history_required = parameters.get("financial_history_required", False)
     if not isinstance(financial_history_required, bool):
         fail("financial_history_required must be a boolean")
@@ -121,13 +139,18 @@ def validate(root: Path) -> None:
         for key in ("security_code", "company_name"):
             if not isinstance(company.get(key), str) or not company[key].strip():
                 fail(f"{field}.{key} must be a non-empty string")
+        for key in ("selection_bucket", "selection_reason", "source_ranking", "representativeness_note"):
+            if not isinstance(company.get(key), str) or not company[key].strip():
+                fail(f"{field}.{key} must be a non-empty string")
         if validate_status(company, field) == "completed":
             completed_reviews += 1
             report_data_path = require_file(
                 root, company.get("report_data_path"), f"{field}.report_data_path", json_file=True
             )
             if financial_history_required:
-                validate_financial_history(load_json(report_data_path), f"{field}.report_data")
+                validate_financial_history(
+                    load_json(report_data_path), f"{field}.report_data", default_history_years
+                )
             require_file(root, company.get("report_path"), f"{field}.report_path")
     if review_status == "completed" and not companies:
         fail("completed filing_reviews must select at least one company")
@@ -140,7 +163,11 @@ def validate(root: Path) -> None:
         if completed_reviews < minimum:
             fail(f"completed peer_ranking requires at least {minimum} completed filing reviews")
         require_file(root, ranking.get("peer_data_path"), "stages.peer_ranking.peer_data_path", json_file=True)
-        require_file(root, ranking.get("ranking_data_path"), "stages.peer_ranking.ranking_data_path", json_file=True)
+        ranking_data_path = require_file(
+            root, ranking.get("ranking_data_path"), "stages.peer_ranking.ranking_data_path", json_file=True
+        )
+        if load_json(ranking_data_path).get("comparison_mode") != "formal_ranking":
+            fail("completed peer_ranking requires ranking_data.comparison_mode=formal_ranking")
         ranking_report_data_path = require_file(
             root, ranking.get("report_data_path"), "stages.peer_ranking.report_data_path", json_file=True
         )
@@ -148,6 +175,8 @@ def validate(root: Path) -> None:
             fail("stages.peer_ranking.report_data must contain at least 2 series_bars blocks")
         require_file(root, ranking.get("markdown_path"), "stages.peer_ranking.markdown_path")
         require_file(root, ranking.get("report_path"), "stages.peer_ranking.report_path")
+    elif ranking_status == "partial" and completed_reviews < directional_minimum:
+        fail(f"partial peer_ranking requires at least {directional_minimum} completed filing reviews")
 
     if not isinstance(manifest.get("limitations", []), list):
         fail("limitations must be an array")

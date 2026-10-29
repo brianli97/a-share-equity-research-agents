@@ -9,9 +9,9 @@
 | `a-share-industry-research-workflow` | 如何从一个行业请求完成筛选、深研和同行排序？ | 行业、主题或产业链；可选 Top-N、深研家数和截止日 | 统一任务目录、`workflow_manifest.json` 及三个阶段的全部产物 | 只负责编排，不替代三个专业 Skill 的研究判断 |
 | `a-share-industry-screening` | 这个行业或主题应该先研究哪些公司？ | 行业、主题或产业链环节；筛选模式；Top N | `screening/universe.json`、候选池和筛选报告 | 不替代单家公司财报深研，不直接给出买卖建议 |
 | `a-share-filing-review` | 这家公司的基本面、治理和主要风险怎么样？ | 一家 A 股公司的名称或代码 | 基于招股书和定期报告的溯源 PDF、`extracted/report_data.json` | 不负责多公司统一排名，不提供目标价或无条件买卖建议 |
-| `a-share-peer-value-ranking` | 同行中哪些公司更值得优先研究？ | 通常至少 3 家公司的标准化研究数据；统一口径的估值信息 | 同行比较、情景排名、研究优先级和 PDF 报告 | 不从全市场建立候选池；排名不等于直接投资建议 |
+| `a-share-peer-value-ranking` | 同行中哪些公司更值得优先研究？ | 3–4 家可做方向性比较，至少 5 家才做正式排名；统一口径的估值信息 | 同行比较、情景排名、研究优先级和 PDF 报告 | 不从全市场建立候选池；排名不等于直接投资建议 |
 
-`a-share-industry-research-workflow` 默认由一个 Agent 顺序执行，筛选 Top 20、深研前 5 家，并在至少 3 家深研成功后生成正式排名；运行状态写入 `workflow_manifest.json`，中断后可以继续。它不要求 Multica 或多个 Agent。`a-share-industry-screening` 支持龙头、热度、基本面和综合等筛选模式。`a-share-filing-review` 以公司官方披露文件为主要证据，生成单公司研究报告，并为同行比较提供结构化数据。`a-share-peer-value-ranking` 会统一报告期、指标定义和估值时点，从质量、成长、盈利与现金流、资产负债表、资本配置、治理及安全边际等维度形成多情景排序。
+`a-share-industry-research-workflow` 默认由一个 Agent 顺序执行，筛选 Top 20，并按行业龙头、高成长、价值/周期和差异化模式分层选择 5 家深研；3–4 家有效样本只做方向性比较，至少 5 家才生成正式排名。运行状态写入 `workflow_manifest.json`，中断后可以继续。
 
 默认证券范围仅包括上交所主板、深交所主板和深交所创业板 A 股，排除科创板与北交所；用户可以在请求中显式覆盖。对“半导体”等宽主题，工作流先拆分产业链环节：跨环节结果称为基本面研究优先级，严格同行价值排序只在同一或高度可比环节内生成。
 
@@ -95,7 +95,7 @@ scripts/
 ## 调用
 
 ```text
-使用 $a-share-industry-research-workflow 完整研究人形机器人产业链：综合筛选 Top 20，顺序深研前 5 家，并生成同行价值排序和统一任务目录。
+使用 $a-share-industry-research-workflow 完整研究人形机器人产业链：综合筛选 Top 20，分层选择 5 家深研，并按有效样本数生成方向性比较或正式同行价值排序和统一任务目录。
 
 使用 $a-share-industry-screening，按综合模式筛选人形机器人产业链前 20 家 A 股公司，输出候选池和筛选报告。
 

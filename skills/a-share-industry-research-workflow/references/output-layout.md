@@ -42,12 +42,15 @@ output/
   "topic": "人形机器人产业链",
   "as_of_date": "2026-10-24",
   "parameters": {
+    "discovery_boards": ["SSE_MAIN", "SSE_STAR", "SZSE_MAIN", "SZSE_CHINEXT", "BSE"],
     "allowed_boards": ["SSE_MAIN", "SZSE_MAIN", "SZSE_CHINEXT"],
     "excluded_boards": ["SSE_STAR", "BSE"],
     "screening_mode": "composite",
     "screening_top_n": 20,
     "filing_review_top_n": 5,
-    "ranking_min_companies": 3
+    "directional_min_companies": 3,
+    "ranking_min_companies": 5,
+    "history_policy": {"default_years": 3, "cyclical_years_min": 5, "cyclical_years_max": 7}
   },
   "stages": {
     "scope_definition": {
@@ -68,6 +71,10 @@ output/
       "selected_companies": [{
         "security_code": "000001",
         "company_name": "示例股份有限公司",
+        "selection_bucket": "leader",
+        "selection_reason": "综合榜靠前且行业地位证据充分",
+        "source_ranking": "composite",
+        "representativeness_note": "代表成熟龙头",
         "status": "completed",
         "report_data_path": "companies/000001_示例股份/extracted/report_data.json",
         "report_path": "companies/000001_示例股份/report/000001_示例股份_招股书与财报解读_20261024.pdf",

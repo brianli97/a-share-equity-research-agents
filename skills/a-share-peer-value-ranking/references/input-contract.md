@@ -20,6 +20,7 @@
   "as_of_date": "YYYY-MM-DD",
   "financial_period": "YYYY-MM-DD",
   "price_date": null,
+  "comparison_mode": "formal_ranking",
   "scenarios": {},
   "companies": []
 }
@@ -55,6 +56,7 @@
 - 定性分必须带 `basis`，说明证据、反证和为何不是更高或更低。
 - 不使用从文字猜出的精确财务数字。无法取得时留空，并加入 `data_gaps`。
 - `industry_role` 必须具体到可比较环节，例如“刻蚀设备”“晶圆代工”“内存接口芯片”，不能只写“半导体”。跨环节样本把输出类型标记为 `cross_chain_research_priority`，不得使用 `peer_value_ranking`。
+- `comparison_mode` 按有效可比样本数设置：1–2 家为 `case_comparison`，3–4 家为 `directional_comparison`，至少 5 家才允许 `formal_ranking`。脚本会按样本数降级，不接受人为提升精度。
 
 ## 期间与单位
 

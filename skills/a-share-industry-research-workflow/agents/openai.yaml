@@ -1,6 +1,6 @@
 interface:
   display_name: "A股行业研究工作流"
   short_description: "顺序完成行业筛选、重点公司深研与同行价值排名"
-  default_prompt: "使用 $a-share-industry-research-workflow 对指定 A 股行业执行完整研究，筛选 Top 20、深研前 5 家，并生成同行价值排序与统一输出目录。"
+  default_prompt: "使用 $a-share-industry-research-workflow 对指定 A 股行业执行完整研究，筛选 Top 20、分层选择 5 家深研，并按有效样本数生成方向性比较或正式同行价值排序。"
 policy:
   allow_implicit_invocation: true
